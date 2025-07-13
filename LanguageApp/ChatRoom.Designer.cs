@@ -38,6 +38,7 @@ namespace WinFormsApp1
             textBox1 = new TextBox();
             richTextBox1 = new RichTextBox();
             label1 = new Label();
+            richTextBox2 = new RichTextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -76,17 +77,27 @@ namespace WinFormsApp1
             label1.TabIndex = 3;
             label1.Text = "At the French Bakery";
             // 
-            // Form2
+            // richTextBox2
+            // 
+            richTextBox2.Location = new Point(1540, 382);
+            richTextBox2.Name = "richTextBox2";
+            richTextBox2.Size = new Size(352, 447);
+            richTextBox2.TabIndex = 4;
+            richTextBox2.Text = "";
+            richTextBox2.TextChanged += richTextBox2_TextChanged;
+            // 
+            // ChatRoom
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(32, 32, 32);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1915, 977);
+            Controls.Add(richTextBox2);
             Controls.Add(label1);
             Controls.Add(richTextBox1);
             Controls.Add(textBox1);
-            Name = "Form2";
+            Name = "ChatRoom";
             Text = "Form2";
             Load += Form2_Load;
             ResumeLayout(false);
@@ -98,5 +109,6 @@ namespace WinFormsApp1
         private TextBox textBox1;
         private RichTextBox richTextBox1;
         private Label label1;
+        private RichTextBox richTextBox2;
     }
 }

@@ -55,8 +55,44 @@ namespace WinFormsApp1
                 richTextBox1.AppendText("You: " + userInput + "\n" + "\n");
                 textBox1.Clear();
 
-                string aiResponse = await SendMessageAsync(userInput);
+                string aiOutput = await SendMessageAsync(userInput);
+                string aiResponse = aiOutput.Substring(0, aiOutput.IndexOf("Feedback:"));
+                string aiFeedback = aiOutput.Substring(aiOutput.IndexOf("Feedback:"));
+                List<string> spellingMistakes = new();
+                List<string> grammarMistakes = new();
+                if (!aiFeedback.Contains("None"))
+                {
+                    int spellingMistakeAmt = int.Parse(aiFeedback.Substring(aiFeedback.IndexOf("Spelling:") - 3, 1));
+                    int currInd = aiFeedback.IndexOf("Spelling:") + 10;
+                    for (int i = 0; i < spellingMistakeAmt; i++)
+                    {
+                        int nextCommaIndex = aiFeedback.IndexOf(',', currInd);
+                        if (nextCommaIndex != -1)
+                        {
+                            int length = nextCommaIndex - currInd;
+                            spellingMistakes.Add(aiFeedback.Substring(currInd, length));
+                            currInd = nextCommaIndex + 1;
+
+
+                        }
+                        else
+                        {
+                            nextCommaIndex = aiFeedback.IndexOf('(', currInd);
+                            int length = nextCommaIndex - currInd;
+                            spellingMistakes.Add(aiFeedback.Substring(currInd, length));
+                        }
+
+                    }
+
+
+                }
                 richTextBox1.AppendText(aiResponse + "\n");
+                richTextBox2.AppendText(aiFeedback + "\n");
+                foreach (string x in spellingMistakes)
+                {
+                    richTextBox2.AppendText(x + "\n");
+
+                }
             }
         }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -65,6 +101,11 @@ namespace WinFormsApp1
         }
 
         private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

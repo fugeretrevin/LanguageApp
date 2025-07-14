@@ -39,6 +39,7 @@ namespace WinFormsApp1
             richTextBox1 = new RichTextBox();
             label1 = new Label();
             richTextBox2 = new RichTextBox();
+            richTextBox3 = new RichTextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -86,6 +87,15 @@ namespace WinFormsApp1
             richTextBox2.Text = "";
             richTextBox2.TextChanged += richTextBox2_TextChanged;
             // 
+            // richTextBox3
+            // 
+            richTextBox3.Location = new Point(68, 382);
+            richTextBox3.Name = "richTextBox3";
+            richTextBox3.Size = new Size(384, 390);
+            richTextBox3.TabIndex = 5;
+            richTextBox3.Text = "";
+            richTextBox3.TextChanged += richTextBox3_TextChanged;
+            // 
             // ChatRoom
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -93,6 +103,7 @@ namespace WinFormsApp1
             BackColor = Color.FromArgb(32, 32, 32);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1915, 977);
+            Controls.Add(richTextBox3);
             Controls.Add(richTextBox2);
             Controls.Add(label1);
             Controls.Add(richTextBox1);
@@ -110,5 +121,6 @@ namespace WinFormsApp1
         private RichTextBox richTextBox1;
         private Label label1;
         private RichTextBox richTextBox2;
+        private RichTextBox richTextBox3;
     }
 }

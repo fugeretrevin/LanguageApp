@@ -1,0 +1,1 @@
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\LanguageAppWinUI.csproj;x64

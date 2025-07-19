@@ -22,7 +22,7 @@
 
             <RichTextBlock x:ConnectionId='5' Name="ChatDisplay" Width="500" Height="500" Foreground="White">
                 <Paragraph>
-                    <Run Text="Chatbox area"></Run>
+                    
                 </Paragraph>
             </RichTextBlock>
         </Border>
@@ -48,7 +48,8 @@
                 PlaceholderText="Type in here"
                 BorderThickness="0"
                 Padding="4"
-                                          />
+                                          
+                />
         </Border>
     </Grid>
     

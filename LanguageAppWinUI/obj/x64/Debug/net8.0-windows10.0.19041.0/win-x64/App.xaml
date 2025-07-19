@@ -12,10 +12,11 @@
                 
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
-            <Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
+            <Style TargetType="Button">
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
                 <Setter Property="VerticalAlignment" Value="Stretch"/>
                 <Setter Property="Margin" Value="15"/>
+                <Setter Property="Padding" Value="10"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -24,68 +25,57 @@
                                     <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1" />
                                 </Grid.RenderTransform>
 
-                                <!-- Background and border -->
+                                <!-- Background -->
                                 <Border x:Name="ButtonBorder"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="8"
-                        Padding="{TemplateBinding Padding}">
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="8"
+                            Padding="{TemplateBinding Padding}">
+                                    <!-- 🧠 This supports any layout: text, image, StackPanel, etc -->
                                     <ContentPresenter HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"
-                                      Content="{TemplateBinding Content}"
-                                      ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                          VerticalAlignment="Center"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 </Border>
 
-                                <!-- ✅ FIXED: Put VisualStateManager inside Grid -->
+                                <!-- Hover, Pressed Visual States -->
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal" >
-                                        <Storyboard>
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="scaleTransform"
-                                                Storyboard.TargetProperty="ScaleX"
-                                                To="1"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetName="scaleTransform"
-                                                Storyboard.TargetProperty="ScaleY"
-                                                To="1"
-                                                Duration="0:0:0.2" />
-                                        </Storyboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                     Storyboard.TargetProperty="ScaleX"
+                                                     To="1" Duration="0:0:0.2" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                     Storyboard.TargetProperty="ScaleY"
+                                                     To="1" Duration="0:0:0.2" />
+                                            </Storyboard>
                                         </VisualState>
 
                                         <VisualState x:Name="PointerOver">
                                             <Storyboard>
-                                                <DoubleAnimation
-                                                    Storyboard.TargetName="scaleTransform"
-                                                    Storyboard.TargetProperty="ScaleX"
-                                                    To="1.1"
-                                                    Duration="0:0:0.2" />   
-                                                <DoubleAnimation
-                                                    Storyboard.TargetName="scaleTransform"
-                                                    Storyboard.TargetProperty="ScaleY"
-                                                    To="1.1"
-                                                    Duration="0:0:0.2" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                     Storyboard.TargetProperty="ScaleX"
+                                                     To="1.1" Duration="0:0:0.2" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                     Storyboard.TargetProperty="ScaleY"
+                                                     To="1.1" Duration="0:0:0.2" />
                                             </Storyboard>
                                         </VisualState>
 
                                         <VisualState x:Name="Pressed">
                                             <Storyboard>
-                                                <DoubleAnimation
-                                    Storyboard.TargetName="scaleTransform"
-                                    Storyboard.TargetProperty="ScaleX"
-                                    To="0.95"
-                                    Duration="0:0:0.03" />
-                                                <DoubleAnimation
-                                    Storyboard.TargetName="scaleTransform"
-                                    Storyboard.TargetProperty="ScaleY"
-                                    To="0.95"
-                                    Duration="0:0:0.03" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                     Storyboard.TargetProperty="ScaleX"
+                                                     To="0.95" Duration="0:0:0.03" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                                     Storyboard.TargetProperty="ScaleY"
+                                                     To="0.95" Duration="0:0:0.03" />
                                             </Storyboard>
                                         </VisualState>
 
-                                        <VisualState x:Name="Disabled" />
+                                        <VisualState x:Name="Disabled"/>
                                     </VisualStateGroup>
                                 </VisualStateManager.VisualStateGroups>
                             </Grid>

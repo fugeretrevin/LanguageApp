@@ -35,10 +35,25 @@ namespace LanguageAppWinUI
     public sealed partial class ChatWindow : Window
     {
             private static readonly HttpClient client = new HttpClient();
-            public ChatWindow()
+            public ChatWindow(string scenario)
             {
-                this.InitializeComponent();
+            SetScenario(scenario);
+
+            this.InitializeComponent();
             }
+
+        private async void SetScenario(string scenario)
+        {
+           string aiResponse = await SendMessageAsync(scenario);
+            aiResponse = aiResponse.Substring(0, aiResponse.IndexOf("Feedback:"));
+            var aiResponseParagraph = new Paragraph();
+            aiResponseParagraph.Inlines.Add(new Run { Text = $"{aiResponse}" });
+            ChatDisplay.Blocks.Add(aiResponseParagraph);
+
+
+
+        }
+
         private async Task<string> SendMessageAsync(string userMessage)
             {
                 var payload = new { message = userMessage, session_id = "mySession123" };

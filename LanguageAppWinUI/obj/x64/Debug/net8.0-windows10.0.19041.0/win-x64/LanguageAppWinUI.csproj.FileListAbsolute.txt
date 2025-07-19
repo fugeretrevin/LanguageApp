@@ -264,3 +264,14 @@ C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8
 C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChatWindow.xaml
 C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ChatWindow.xbf
 C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\Newtonsoft.Json.dll
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.sourcelink.json
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\ChatPicture.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\airport.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\bakery.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\directions.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\doctor.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\grocery.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\hotel.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\park.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\restaurant.png
+C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\images\university.png

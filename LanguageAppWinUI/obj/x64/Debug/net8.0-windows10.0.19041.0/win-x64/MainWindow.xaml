@@ -27,41 +27,72 @@
 
         </Grid.ColumnDefinitions>
 
-        <Button x:ConnectionId='2' Content="1"
-            Grid.Row="0" Grid.Column="0"
-                                />
+       
 
-        <Button x:ConnectionId='3' Content="2"
-            Grid.Row="0" Grid.Column="1"
-                                />
-
-        <Button x:ConnectionId='4' Content="3"
-            Grid.Row="0" Grid.Column="2"
-                                />
-
-        <Button x:ConnectionId='5' Content="4"
-            Grid.Row="1" Grid.Column="0"
-                                />
+        <Button x:ConnectionId='2' Tag="You are a french girl in a bakery" Grid.Row="0" Grid.Column="0"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/bakery.png" Height="100" Width="100"/>
+                <TextBlock Text="At the Bakery" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
         
-        <Button x:ConnectionId='6' Content="5"
-            Grid.Row="1" Grid.Column="1"
-                                />
-
-        <Button x:ConnectionId='7' Content="6"
-            Grid.Row="1" Grid.Column="2"
-                                />
-
-        <Button x:ConnectionId='8' Content="7"
-            Grid.Row="2" Grid.Column="0"
-                                />
+        <Button x:ConnectionId='3' Tag="You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/restaurant.png" Height="100" Width="100"/>
+                <TextBlock Text="Ordering at a Restaurant" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
         
-        <Button x:ConnectionId='9' Content="8"
-             Grid.Row="2" Grid.Column="1"
-                                 />
+        <Button x:ConnectionId='4' Tag="You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/hotel.png" Height="100" Width="100"/>
+                <TextBlock Text="Checking in to a Hotel" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
         
-        <Button x:ConnectionId='10' Content="9"
-             Grid.Row="2" Grid.Column="2"
-                                 />
+        <Button x:ConnectionId='5' Tag="You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/grocery.png" Height="100" Width="100"/>
+                <TextBlock Text="At the Grocery Store" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
+        
+        <Button x:ConnectionId='6' Tag="You are a french guy at the airport" Grid.Row="1" Grid.Column="1"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/airport.png" Height="100" Width="100"/>
+                <TextBlock Text="At the Airport" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
+        
+        <Button x:ConnectionId='7' Tag="You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/directions.png" Height="100" Width="100"/>
+                <TextBlock Text="Asking for Directions" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
+        
+        <Button x:ConnectionId='8' Tag="You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/doctor.png" Height="100" Width="100"/>
+                <TextBlock Text="At the Doctor" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
+        
+        <Button x:ConnectionId='9' Tag="You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/park.png" Height="100" Width="100"/>
+                <TextBlock Text="At the Park" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
+        
+        <Button x:ConnectionId='10' Tag="You are a maths professor at a university" Grid.Row="2" Grid.Column="2"                     >
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Image Source="/images/university.png" Height="100" Width="100"/>
+                <TextBlock Text="At a University" Foreground="White" FontSize="20"/>
+            </StackPanel>
+        </Button>
+
+
     </Grid>
 
 </Window>

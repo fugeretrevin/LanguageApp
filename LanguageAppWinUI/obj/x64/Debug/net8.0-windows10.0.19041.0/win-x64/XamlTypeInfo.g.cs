@@ -299,7 +299,6 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
         private object Activate_5_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
-        private object Activate_10_ChatWindow() { return new global::LanguageAppWinUI.ChatWindow(); }
         private object Activate_12_MainWindow() { return new global::LanguageAppWinUI.MainWindow(); }
         private object Activate_13_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
@@ -394,7 +393,6 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
 
             case 10:   //  LanguageAppWinUI.ChatWindow
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_10_ChatWindow;
                 userType.StaticInitializer = StaticInitializer_10_ChatWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;

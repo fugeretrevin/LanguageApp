@@ -37,6 +37,36 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\airport.png">
+      <PackagePath>images\airport.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\bakery.png">
+      <PackagePath>images\bakery.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\ChatPicture.png">
+      <PackagePath>images\ChatPicture.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\directions.png">
+      <PackagePath>images\directions.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\doctor.png">
+      <PackagePath>images\doctor.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\grocery.png">
+      <PackagePath>images\grocery.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\hotel.png">
+      <PackagePath>images\hotel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\park.png">
+      <PackagePath>images\park.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\restaurant.png">
+      <PackagePath>images\restaurant.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\university.png">
+      <PackagePath>images\university.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.18\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
     </AppxPackagedFile>

@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-07-15T22:34:26.659</Modified>
+      <Modified>2025-07-19T00:22:14.982</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-07-15T22:22:52.194</Modified>
+      <Modified>2025-07-19T00:22:14.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.runtimeconfig.json">
       <PackagePath>LanguageAppWinUI.runtimeconfig.json</PackagePath>
@@ -43,11 +43,51 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.dll">
       <PackagePath>LanguageAppWinUI.dll</PackagePath>
-      <Modified>2025-07-15T22:34:26.247</Modified>
+      <Modified>2025-07-19T00:22:12.431</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
-      <Modified>2025-07-15T22:34:26.247</Modified>
+      <Modified>2025-07-19T00:22:12.524</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\airport.png">
+      <PackagePath>images\airport.png</PackagePath>
+      <Modified>2025-07-19T00:16:49.978</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\bakery.png">
+      <PackagePath>images\bakery.png</PackagePath>
+      <Modified>2025-07-19T00:15:47.829</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\ChatPicture.png">
+      <PackagePath>images\ChatPicture.png</PackagePath>
+      <Modified>2025-07-18T23:32:49.726</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\directions.png">
+      <PackagePath>images\directions.png</PackagePath>
+      <Modified>2025-07-19T00:16:39.521</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\doctor.png">
+      <PackagePath>images\doctor.png</PackagePath>
+      <Modified>2025-07-19T00:16:30.621</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\grocery.png">
+      <PackagePath>images\grocery.png</PackagePath>
+      <Modified>2025-07-19T00:19:26.372</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\hotel.png">
+      <PackagePath>images\hotel.png</PackagePath>
+      <Modified>2025-07-19T00:17:17.375</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\park.png">
+      <PackagePath>images\park.png</PackagePath>
+      <Modified>2025-07-19T00:16:18.859</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\restaurant.png">
+      <PackagePath>images\restaurant.png</PackagePath>
+      <Modified>2025-07-19T00:17:31.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\university.png">
+      <PackagePath>images\university.png</PackagePath>
+      <Modified>2025-07-19T00:16:08.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.18\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -911,7 +951,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.deps.json">
       <PackagePath>LanguageAppWinUI.deps.json</PackagePath>
-      <Modified>2025-07-15T22:21:15.332</Modified>
+      <Modified>2025-07-19T00:22:13.871</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

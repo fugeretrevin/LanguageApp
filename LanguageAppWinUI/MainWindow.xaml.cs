@@ -45,6 +45,7 @@ namespace LanguageAppWinUI
             if (_chatWindow == null)
             {
                 if (sender is Button btn && btn.Tag is string scenario)
+                    
                 _chatWindow = new ChatWindow(scenario);
                 _chatWindow.Closed += (s, args) => _chatWindow = null;
             }

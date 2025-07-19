@@ -15,42 +15,47 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
         <Grid.RowDefinitions>
-            <RowDefinition Height="500" />
+            <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Border Background="#FF2B2B2B" Padding="10" Width="500" Height="500" BorderBrush="#FF2B2B2B" Grid.Row="0">
-
-            <RichTextBlock Name="ChatDisplay" Width="500" Height="500" Foreground="White">
-                <Paragraph>
-                    
-                </Paragraph>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
+       
+            <RichTextBlock Name="ChatDisplay" Foreground="White">
+                
             </RichTextBlock>
-        </Border>
-        <RichTextBlock Name="AiFeedbackDisplay" Width="400" Height="300" Foreground="White" Grid.Row="0" HorizontalAlignment="Right">
+      
+        </ScrollViewer>
+        
+        <RichTextBlock Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" >
             <Paragraph>
                 <Run Text="Feedback area"></Run>
             </Paragraph>
         </RichTextBlock>
-        <RichEditBox Name="CorrectedUserDisplay" Width="400" Height="300" Foreground="White" Grid.Row="0" HorizontalAlignment="Left">
+        <RichEditBox Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" >
             
         </RichEditBox>
-        <Border
-            Background="#FF2B2B2B"
-            BorderBrush="#FF2B2B2B"
-            BorderThickness="1"
-            Width="500"
-            Height="40"
-            Grid.Row="1">
+
 
             <RichEditBox Name="InputBox"
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"
-                BorderThickness="0"
-                Padding="4"
+                BorderThickness="1"
+               
                 KeyDown="InputBox_KeyDown"
+                AcceptsReturn="False"
+                Height="40" 
+                Grid.Row="1" 
+                Grid.Column="1" 
+                Padding="4" 
+                Margin="10"
                 />
-        </Border>
+   
     </Grid>
     
 </Window>

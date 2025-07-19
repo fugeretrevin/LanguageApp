@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LanguageAppWinUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3a38808da9d47d085a38933ae02239e3ae87a5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b696466acc6e90e0e172f89cedd8e6e619abb46")]
 [assembly: System.Reflection.AssemblyProductAttribute("LanguageAppWinUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LanguageAppWinUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

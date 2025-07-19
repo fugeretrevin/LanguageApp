@@ -13,7 +13,17 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
+    <Grid>
+        <MediaPlayerElement x:Name="LoadingVideo"
+            AutoPlay="False"
+            AreTransportControlsEnabled="False"
+            Visibility="Collapsed"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Stretch="UniformToFill"
+                    Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
+    <Grid x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
@@ -23,6 +33,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
         <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
        
             <RichTextBlock Name="ChatDisplay" Foreground="White">
@@ -55,7 +66,9 @@
                 Padding="4" 
                 Margin="10"
                 />
+        <Image x:Name="scenarioImage" Width="200" Height="200" Grid.Row="1" Grid.Column="0"></Image>
    
     </Grid>
-    
+    </Grid>
+
 </Window>

@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-07-19T03:25:21.410</Modified>
+      <Modified>2025-07-19T19:40:49.606</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-07-19T03:25:21.024</Modified>
+      <Modified>2025-07-19T19:40:49.129</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.runtimeconfig.json">
       <PackagePath>LanguageAppWinUI.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.dll">
       <PackagePath>LanguageAppWinUI.dll</PackagePath>
-      <Modified>2025-07-19T03:25:20.817</Modified>
+      <Modified>2025-07-19T19:40:48.529</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
-      <Modified>2025-07-19T03:25:20.832</Modified>
+      <Modified>2025-07-19T19:40:48.637</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\airport.png">
       <PackagePath>images\airport.png</PackagePath>
@@ -976,6 +976,10 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <Modified>2025-07-14T20:43:15.203</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\videos\loading.mp4">
+      <PackagePath>Assets\videos\loading.mp4</PackagePath>
+      <Modified>2025-07-19T19:38:07.431</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>

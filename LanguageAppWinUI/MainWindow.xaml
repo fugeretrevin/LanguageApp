@@ -29,63 +29,63 @@
 
        
 
-        <Button Tag="You are a french girl in a bakery" Grid.Row="0" Grid.Column="0" Click="Button_Click">
+        <Button Tag="(bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/bakery.png" Height="100" Width="100"/>
                 <TextBlock Text="At the Bakery" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1" Click="Button_Click">
+
+        <Button Tag="(restaurant) You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/restaurant.png" Height="100" Width="100"/>
                 <TextBlock Text="Ordering at a Restaurant" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2" Click="Button_Click">
+
+        <Button Tag="(hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/hotel.png" Height="100" Width="100"/>
                 <TextBlock Text="Checking in to a Hotel" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0" Click="Button_Click">
+
+        <Button Tag="(grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/grocery.png" Height="100" Width="100"/>
                 <TextBlock Text="At the Grocery Store" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a french guy at the airport" Grid.Row="1" Grid.Column="1" Click="Button_Click">
+
+        <Button Tag="(airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/airport.png" Height="100" Width="100"/>
                 <TextBlock Text="At the Airport" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2" Click="Button_Click">
+
+        <Button Tag="(directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/directions.png" Height="100" Width="100"/>
                 <TextBlock Text="Asking for Directions" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0" Click="Button_Click">
+
+        <Button Tag="(doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/doctor.png" Height="100" Width="100"/>
                 <TextBlock Text="At the Doctor" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1" Click="Button_Click">
+
+        <Button Tag="(park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/park.png" Height="100" Width="100"/>
                 <TextBlock Text="At the Park" Foreground="White" FontSize="20"/>
             </StackPanel>
         </Button>
-        
-        <Button Tag="You are a maths professor at a university" Grid.Row="2" Grid.Column="2" Click="Button_Click">
+
+        <Button Tag="(university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2" Click="Button_Click">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <Image Source="/images/university.png" Height="100" Width="100"/>
                 <TextBlock Text="At a University" Foreground="White" FontSize="20"/>

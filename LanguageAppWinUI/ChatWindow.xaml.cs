@@ -17,10 +17,13 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Documents;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml.Navigation;
 using Newtonsoft.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Core;
+using Windows.Media.Playback;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -36,20 +39,44 @@ namespace LanguageAppWinUI
     {
             private static readonly HttpClient client = new HttpClient();
             public ChatWindow(string scenario)
+
             {
+            this.InitializeComponent();
+
             SetScenario(scenario);
 
-            this.InitializeComponent();
             }
 
         private async void SetScenario(string scenario)
         {
-           string aiResponse = await SendMessageAsync(scenario);
+
+
+            // Set the source and play
+
+            var videoUri = new Uri("ms-appx:///Assets/videos/loading.mp4");
+            var mediaPlayer = new MediaPlayer();
+            mediaPlayer.Source = MediaSource.CreateFromUri(videoUri);
+            mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
+
+            // Set to MediaPlayerElement
+            LoadingVideo.SetMediaPlayer(mediaPlayer);
+            LoadingVideo.Visibility = Visibility.Visible;
+            MainContent.Visibility = Visibility.Collapsed;
+
+            // Start playback
+            mediaPlayer.Play(); 
+
+            string aiResponse = await SendMessageAsync(scenario);
             aiResponse = aiResponse.Substring(0, aiResponse.IndexOf("Feedback:"));
             var aiResponseParagraph = new Paragraph();
             aiResponseParagraph.Inlines.Add(new Run { Text = $"{aiResponse}" });
             ChatDisplay.Blocks.Add(aiResponseParagraph);
 
+            int start = scenario.IndexOf('(') + 1;
+            int end = scenario.IndexOf(')');
+            string imageName = scenario.Substring(start, end - start);
+            string imageSource = $"ms-appx:///images/{imageName}.png";
+            scenarioImage.Source = new BitmapImage(new Uri(imageSource));
 
 
         }
@@ -236,7 +263,16 @@ namespace LanguageAppWinUI
             {
 
             }
-            
+        private void MediaPlayer_MediaEnded(MediaPlayer sender, object args)
+        {
+            // Switch UI thread before modifying visuals
+            DispatcherQueue.TryEnqueue(() =>
+            {
+                LoadingVideo.Visibility = Visibility.Collapsed;
+                MainContent.Visibility = Visibility.Visible;
+            });
+        }
+
     }
     }
 

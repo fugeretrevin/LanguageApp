@@ -13,7 +13,17 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
+    <Grid>
+        <MediaPlayerElement x:ConnectionId='2' x:Name="LoadingVideo"
+            AutoPlay="False"
+            AreTransportControlsEnabled="False"
+            Visibility="Collapsed"
+            
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Stretch="UniformToFill"
+                    Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
+    <Grid x:ConnectionId='3' x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
@@ -23,25 +33,26 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
         <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
        
-            <RichTextBlock x:ConnectionId='5' Name="ChatDisplay" Foreground="White">
+            <RichTextBlock x:ConnectionId='8' Name="ChatDisplay" Foreground="White">
                 
             </RichTextBlock>
       
         </ScrollViewer>
         
-        <RichTextBlock x:ConnectionId='2' Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" >
+        <RichTextBlock x:ConnectionId='4' Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" >
             <Paragraph>
                 <Run Text="Feedback area"></Run>
             </Paragraph>
         </RichTextBlock>
-        <RichEditBox x:ConnectionId='3' Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" >
+        <RichEditBox x:ConnectionId='5' Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" >
             
         </RichEditBox>
 
 
-            <RichEditBox x:ConnectionId='4' Name="InputBox"
+            <RichEditBox x:ConnectionId='6' Name="InputBox"
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"
@@ -55,8 +66,10 @@
                 Padding="4" 
                 Margin="10"
                 />
+        <Image x:ConnectionId='7' x:Name="scenarioImage" Width="200" Height="200" Grid.Row="1" Grid.Column="0"></Image>
    
     </Grid>
-    
+    </Grid>
+
 </Window>
 

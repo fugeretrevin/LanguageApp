@@ -37,11 +37,17 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\noun-cards-7266618.png">
+      <PackagePath>images\noun-cards-7266618.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\airport.png">
       <PackagePath>images\airport.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\bakery.png">
       <PackagePath>images\bakery.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\book-open.png">
+      <PackagePath>images\book-open.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\ChatPicture.png">
       <PackagePath>images\ChatPicture.png</PackagePath>
@@ -52,11 +58,23 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\doctor.png">
       <PackagePath>images\doctor.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\edit-2.png">
+      <PackagePath>images\edit-2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\grid.png">
+      <PackagePath>images\grid.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\grocery.png">
       <PackagePath>images\grocery.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\home.png">
+      <PackagePath>images\home.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\hotel.png">
       <PackagePath>images\hotel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\noun-cards-165724.png">
+      <PackagePath>images\noun-cards-165724.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\park.png">
       <PackagePath>images\park.png</PackagePath>

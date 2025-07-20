@@ -15,14 +15,31 @@
   <ItemGroup>
     <None Remove="images\airport.png" />
     <None Remove="images\bakery.png" />
+    <None Remove="images\book-open.png" />
+    <None Remove="images\book-open.svg" />
     <None Remove="images\ChatPicture.png" />
     <None Remove="images\directions.png" />
     <None Remove="images\doctor.png" />
+    <None Remove="images\edit-2.png" />
+    <None Remove="images\edit-2.svg" />
+    <None Remove="images\grid.png" />
+    <None Remove="images\grid.svg" />
     <None Remove="images\grocery.png" />
+    <None Remove="images\home.png" />
+    <None Remove="images\home.svg" />
     <None Remove="images\hotel.png" />
+    <None Remove="images\noun-cards-165724.png" />
+    <None Remove="images\noun-cards-165724.svg" />
+    <None Remove="images\noun-cards-7266618.png" />
+    <None Remove="images\noun-cards-7266618.svg" />
     <None Remove="images\park.png" />
     <None Remove="images\restaurant.png" />
     <None Remove="images\university.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\noun-cards-7266618.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +56,9 @@
     <Content Include="images\bakery.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\book-open.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\ChatPicture.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -48,10 +68,22 @@
     <Content Include="images\doctor.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\edit-2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\grid.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\grocery.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\home.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\hotel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\noun-cards-165724.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\park.png">

@@ -14,6 +14,65 @@
     </Window.SystemBackdrop>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Background="#222222"
+        CornerRadius="8" Margin="10,35,10,35">
+            <Grid Background="#222222" Margin="0,10,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+
+            </Grid.RowDefinitions>
+            <Button Style="{StaticResource SidebarButton}" Grid.Row="0">
+                
+            
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="/images/home.png" Width="18" Height="18" />
+                        <TextBlock Text="Home" Margin="8,0,0,0"/>
+
+            </StackPanel>
+            </Button>
+
+            <Button Style="{StaticResource SidebarButton}" Grid.Row="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/images/grid.png" Width="18" Height="18" />
+                    <TextBlock Text="Scenarios" Margin="8,0,0,0"/>
+
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource SidebarButton}" Grid.Row="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/images/noun-cards-165724.png" Width="18" Height="18" />
+                    <TextBlock Text="Flashcards" Margin="8,0,0,0"/>
+
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource SidebarButton}" Grid.Row="3">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/images/book-open.png" Width="18" Height="18" />
+                    <TextBlock Text="Mistakes Overview" Margin="8,0,0,0"/>
+
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource SidebarButton}" Grid.Row="4">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Image Source="/images/edit-2.png" Width="18" Height="18" />
+                    <TextBlock Text="Tips" Margin="8,0,0,0"/>
+
+                </StackPanel>
+            </Button>
+
+        </Grid>
+            </Border>
+            <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20" Grid.Column="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -94,5 +153,7 @@
 
 
     </Grid>
+    </Grid>
+
 
 </Window>

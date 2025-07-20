@@ -14,6 +14,7 @@
     </Window.SystemBackdrop>
 
     <Grid>
+        
         <MediaPlayerElement x:Name="LoadingVideo"
             AutoPlay="False"
             AreTransportControlsEnabled="False"

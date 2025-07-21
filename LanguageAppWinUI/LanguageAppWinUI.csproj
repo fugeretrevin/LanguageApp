@@ -18,6 +18,8 @@
     <None Remove="images\book-open.png" />
     <None Remove="images\book-open.svg" />
     <None Remove="images\ChatPicture.png" />
+    <None Remove="images\chevronleft.png" />
+    <None Remove="images\chevronright.png" />
     <None Remove="images\directions.png" />
     <None Remove="images\doctor.png" />
     <None Remove="images\edit-2.png" />
@@ -28,15 +30,26 @@
     <None Remove="images\home.png" />
     <None Remove="images\home.svg" />
     <None Remove="images\hotel.png" />
+    <None Remove="images\menu.png" />
     <None Remove="images\noun-cards-165724.png" />
     <None Remove="images\noun-cards-165724.svg" />
     <None Remove="images\noun-cards-7266618.png" />
     <None Remove="images\noun-cards-7266618.svg" />
     <None Remove="images\park.png" />
     <None Remove="images\restaurant.png" />
+    <None Remove="images\rotate.png" />
     <None Remove="images\university.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\chevronleft.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\chevronright.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\menu.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\noun-cards-7266618.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -92,6 +105,9 @@
     <Content Include="images\restaurant.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\rotate.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\university.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -115,6 +131,11 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="Assets\flashcards.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="ChatWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,5 +156,6 @@
     <PublishReadyToRun Condition="'$(Configuration)' != 'Debug'">True</PublishReadyToRun>
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 </Project>

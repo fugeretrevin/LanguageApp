@@ -1,0 +1,25 @@
+[
+  {
+    "Title": "Common Greetings",
+    "Cards": [
+      { "Phrase": "Bonjour!", "Translation": "Good morning!" },
+      { "Phrase": "Salut!", "Translation": "Hey!" },
+      { "Phrase": "Bonsoir", "Translation": "Good evening" },
+      { "Phrase": "Comment ca va?", "Translation": "How is it going?" }
+
+    ]
+  },
+  {
+    "Title": "Action Verbs",
+    "Cards": [
+      { "Phrase": "etre", "Translation": "to be" },
+      { "Phrase": "avoir", "Translation": "to have" },
+      { "Phrase": "faire", "Translation": "to do" },
+      { "Phrase": "aller", "Translation": "to go" },
+      { "Phrase": "parler", "Translation": "to speak" },
+      { "Phrase": "vouloir", "Translation": "to want" }
+
+
+    ]
+  }
+]

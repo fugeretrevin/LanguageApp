@@ -1,3 +1,4 @@
+Assets\flashcards.json
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
@@ -10,6 +11,8 @@ images\airport.png
 images\bakery.png
 images\book-open.png
 images\ChatPicture.png
+images\chevronleft.png
+images\chevronright.png
 images\directions.png
 images\doctor.png
 images\edit-2.png
@@ -17,8 +20,10 @@ images\grid.png
 images\grocery.png
 images\home.png
 images\hotel.png
+images\menu.png
 images\noun-cards-165724.png
 images\noun-cards-7266618.png
 images\park.png
 images\restaurant.png
+images\rotate.png
 images\university.png

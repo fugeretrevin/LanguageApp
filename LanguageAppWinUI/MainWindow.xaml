@@ -213,7 +213,11 @@
             </Grid>
         </Grid>
         <Grid x:Name="MistakesPage" Grid.Column="1" Tag="PageContent">
-            <TextBlock Text="mistakes" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+            <ScrollViewer>
+                <RichTextBlock x:Name="MistakesText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" MaxWidth="700" TextWrapping="Wrap">
+                   
+                </RichTextBlock>
+            </ScrollViewer>
         </Grid>
             <Grid x:Name="TipsPage" Grid.Column="1" Tag="PageContent">
                 <TextBlock Text="tips" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>

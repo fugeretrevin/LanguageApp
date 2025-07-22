@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.UI.Text;
 using Microsoft.UI.Xaml;
@@ -24,6 +25,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
 using Windows.Media.Playback;
+using Windows.Storage;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -109,142 +111,188 @@ namespace LanguageAppWinUI
             }
             private async void InputBox_KeyDown(object sender, KeyRoutedEventArgs e)
             {
-                if (e.Key == Windows.System.VirtualKey.Enter)
+            if (e.Key == Windows.System.VirtualKey.Enter)
 
-                {
-                    InputBox.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string userInput);
-                    InputBox.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, "");
+            {
+                InputBox.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string userInput);
+                InputBox.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, "");
 
                 var paragraph = new Paragraph();
                 paragraph.Inlines.Add(new Run { Text = $"You: {userInput}" });
                 ChatDisplay.Blocks.Add(paragraph);
                 string aiOutput = await SendMessageAsync(userInput);
-                    string aiResponse = aiOutput.Substring(0, aiOutput.IndexOf("Feedback:"));
-                    string aiFeedback = aiOutput.Substring(aiOutput.IndexOf("Feedback:"));
-                    string spellingFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Spelling:") - 2, aiFeedback.IndexOf(") Grammar") - 2);
-                    string grammarFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Grammar") - 2);
-                    List<string> spellingMistakes = new();
-                    List<string> grammarMistakes = new();
-                    if (!spellingFeedback.Contains("None"))
+                string aiResponse = aiOutput.Substring(0, aiOutput.IndexOf("Feedback:"));
+                string aiFeedback = aiOutput.Substring(aiOutput.IndexOf("Feedback:"));
+                string spellingFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Spelling:") - 2, aiFeedback.IndexOf(") Grammar") - 2);
+                string grammarFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Grammar") - 2);
+                List<string> spellingMistakes = new();
+                List<string> grammarMistakes = new();
+                if (!spellingFeedback.Contains("None"))
+                {
+                    int spellingMistakeAmt = int.Parse(spellingFeedback.Substring(1, 1));
+                    int currInd = spellingFeedback.IndexOf("Spelling:") + 10;
+                    for (int i = 0; i < spellingMistakeAmt; i++)
                     {
-                        int spellingMistakeAmt = int.Parse(spellingFeedback.Substring(1, 1));
-                        int currInd = spellingFeedback.IndexOf("Spelling:") + 10;
-                        for (int i = 0; i < spellingMistakeAmt; i++)
+                        int nextCommaIndex = spellingFeedback.IndexOf(',', currInd);
+                        if (nextCommaIndex != -1)
                         {
-                            int nextCommaIndex = spellingFeedback.IndexOf(',', currInd);
-                            if (nextCommaIndex != -1)
-                            {
-                                int length = nextCommaIndex - currInd;
-                                spellingMistakes.Add(spellingFeedback.Substring(currInd, length).Trim());
-                                currInd = nextCommaIndex + 1;
+                            int length = nextCommaIndex - currInd;
+                            spellingMistakes.Add(spellingFeedback.Substring(currInd, length).Trim());
+                            currInd = nextCommaIndex + 1;
 
-
-                            }
-                            else
-                            {
-                                nextCommaIndex = spellingFeedback.IndexOf('(', currInd);
-                                int length = nextCommaIndex - currInd;
-                                spellingMistakes.Add(spellingFeedback.Substring(currInd, length).Trim());
-                            }
 
                         }
-
-
-                    }
-                    if (!grammarFeedback.Contains("None"))
-                    {
-                        int grammarMistakeAmt = int.Parse(grammarFeedback.Substring(1, 1));
-                        int currInd = grammarFeedback.IndexOf("Grammar:") + 8;
-                        for (int i = 0; i < grammarMistakeAmt; i++)
+                        else
                         {
-                            int nextCommaIndex = grammarFeedback.IndexOf(',', currInd);
-                            if (nextCommaIndex != -1)
-                            {
-                                int length = nextCommaIndex - currInd;
-                                grammarMistakes.Add(grammarFeedback.Substring(currInd, length).Trim());
-                                currInd = nextCommaIndex + 1;
-
-
-                            }
-                            else
-                            {
-                                nextCommaIndex = grammarFeedback.IndexOf('\n', currInd);
-                                int length = nextCommaIndex - currInd;
-                                grammarMistakes.Add(grammarFeedback.Substring(currInd, length).Trim());
-                            }
-
+                            nextCommaIndex = spellingFeedback.IndexOf('(', currInd);
+                            int length = nextCommaIndex - currInd;
+                            spellingMistakes.Add(spellingFeedback.Substring(currInd, length).Trim());
                         }
 
-
                     }
-                    var aiResponseParagraph = new Paragraph();
-                    var aiFeedbackParagraph = new Paragraph();
-
-                    aiResponseParagraph.Inlines.Add(new Run { Text = $"{aiResponse}\n"});
-                    aiFeedbackParagraph.Inlines.Add(new Run { Text = $"{aiFeedback}\n" });
-
-                    ChatDisplay.Blocks.Add(aiResponseParagraph);
-                    AiFeedbackDisplay.Blocks.Add(aiFeedbackParagraph);
-                    string correctedUserInput = userInput;
-                    foreach (string x in spellingMistakes)
-                    {
-                        string incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
-                        string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
-
-                        correctedUserInput = correctedUserInput.Replace(incorrect, correct);
-
-
-                    }
-                    foreach (string x in grammarMistakes)
-                    {
-                        string incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
-                        string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
-
-                        correctedUserInput = correctedUserInput.Replace(incorrect, correct);
-
-
-                    }
-                    RichEditTextRange range = null;
-
-                    int startInd = 0;
-                    var correctedUserInputParagraph = new Paragraph();
-                    correctedUserInputParagraph.Inlines.Add(new Run { Text = $"{correctedUserInput}\n" });
-                    CorrectedUserDisplay.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, correctedUserInput);
-                    var fullRange = CorrectedUserDisplay.Document.GetRange(0, int.MaxValue);
-                    fullRange.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.White;
-                    foreach (string x in spellingMistakes)
-                    {
-                        string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
-
-                        CorrectedUserDisplay.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string fullText);
-                        int index = fullText.IndexOf(correct, startInd, StringComparison.OrdinalIgnoreCase);
-                        if (index >= 0)
-                        {
-                            range = (RichEditTextRange)CorrectedUserDisplay.Document.GetRange(index, index + correct.Length);
-                            range.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.Green;
-                        }
-                    
-
-                    }
-                    foreach (string x in grammarMistakes)
-                    {
-                        string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
-
-                        CorrectedUserDisplay.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string fullText);
-                        int index = fullText.IndexOf(correct, startInd, StringComparison.OrdinalIgnoreCase);
-                        if (index >= 0)
-                        {
-                            range = (RichEditTextRange)CorrectedUserDisplay.Document.GetRange(index, index + correct.Length);
-                            range.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.Orange;
-                        }
-
-                     }
 
 
                 }
+                if (!grammarFeedback.Contains("None"))
+                {
+                    int grammarMistakeAmt = int.Parse(grammarFeedback.Substring(1, 1));
+                    int currInd = grammarFeedback.IndexOf("Grammar:") + 8;
+                    for (int i = 0; i < grammarMistakeAmt; i++)
+                    {
+                        int nextCommaIndex = grammarFeedback.IndexOf(',', currInd);
+                        if (nextCommaIndex != -1)
+                        {
+                            int length = nextCommaIndex - currInd;
+                            grammarMistakes.Add(grammarFeedback.Substring(currInd, length).Trim());
+                            currInd = nextCommaIndex + 1;
+
+
+                        }
+                        else
+                        {
+                            nextCommaIndex = grammarFeedback.IndexOf('\n', currInd);
+                            int length = nextCommaIndex - currInd;
+                            grammarMistakes.Add(grammarFeedback.Substring(currInd, length).Trim());
+                        }
+
+                    }
+
+
+                }
+                var aiResponseParagraph = new Paragraph();
+                var aiFeedbackParagraph = new Paragraph();
+
+                aiResponseParagraph.Inlines.Add(new Run { Text = $"{aiResponse}\n" });
+                aiFeedbackParagraph.Inlines.Add(new Run { Text = $"{aiFeedback}\n" });
+
+                ChatDisplay.Blocks.Add(aiResponseParagraph);
+                AiFeedbackDisplay.Blocks.Add(aiFeedbackParagraph);
+                string correctedUserInput = userInput;
+                foreach (string x in spellingMistakes)
+                {
+                    string incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
+                    string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
+
+                    correctedUserInput = correctedUserInput.Replace(incorrect, correct);
+
+
+                }
+                foreach (string x in grammarMistakes)
+                {
+                    string incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
+                    string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
+
+                    correctedUserInput = correctedUserInput.Replace(incorrect, correct);
+
+
+                }
+                RichEditTextRange range = null;
+
+                int startInd = 0;
+                var correctedUserInputParagraph = new Paragraph();
+                correctedUserInputParagraph.Inlines.Add(new Run { Text = $"{correctedUserInput}\n" });
+                CorrectedUserDisplay.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, correctedUserInput);
+                var fullRange = CorrectedUserDisplay.Document.GetRange(0, int.MaxValue);
+                fullRange.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.White;
+                foreach (string x in spellingMistakes)
+                {
+                    string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
+
+                    CorrectedUserDisplay.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string fullText);
+                    int index = fullText.IndexOf(correct, startInd, StringComparison.OrdinalIgnoreCase);
+                    if (index >= 0)
+                    {
+                        range = (RichEditTextRange)CorrectedUserDisplay.Document.GetRange(index, index + correct.Length);
+                        range.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.Green;
+                    }
+
+
+                }
+                foreach (string x in grammarMistakes)
+                {
+                    string correct = x.Substring(x.IndexOf(" - ") + 3).Trim();
+
+                    CorrectedUserDisplay.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string fullText);
+                    int index = fullText.IndexOf(correct, startInd, StringComparison.OrdinalIgnoreCase);
+                    if (index >= 0)
+                    {
+                        range = (RichEditTextRange)CorrectedUserDisplay.Document.GetRange(index, index + correct.Length);
+                        range.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.Orange;
+                    }
+
+                }
+                if (grammarMistakes.Count > 0 || spellingMistakes.Count > 0)
+                {
+                    MistakeSentence sen = new MistakeSentence
+                    {
+                        Sentence = userInput.Trim(),
+                        Mistakes = new List<Mistake>()
+                    };
+                    foreach (string x in grammarMistakes)
+                    {
+                        Mistake m = new Mistake();
+                        m.Incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
+                        m.Corrected = x.Substring(x.IndexOf(" - ") + 3).Trim();
+                        sen.Mistakes.Add(m);
+                    }
+                    foreach (string x in spellingMistakes)
+                    {
+                        Mistake m = new Mistake();
+                        m.Incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
+                        m.Corrected = x.Substring(x.IndexOf(" - ") + 3).Trim();
+                        sen.Mistakes.Add(m);
+                    }
+
+                    await AddMistake(sen);
+                }
+            }
 
             }
-            private void richTextBox1_TextChanged(object sender, EventArgs e)
+
+            private async Task AddMistake(MistakeSentence sentence)
+            {
+            string fileName = "mistakes.json";
+            StorageFile file;
+
+
+            try
+            {
+                file = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+            }
+            catch
+            {
+
+                file = await ApplicationData.Current.LocalFolder.CreateFileAsync(fileName);
+                await FileIO.WriteTextAsync(file, "[]");
+            }
+            string existingFile = await FileIO.ReadTextAsync(file);
+            var list = System.Text.Json.JsonSerializer.Deserialize<List<MistakeSentence>>(existingFile) ?? new List<MistakeSentence>();
+            list.Add(sentence);
+            string updatedJson = System.Text.Json.JsonSerializer.Serialize(list, new JsonSerializerOptions { WriteIndented = true });
+            await FileIO.WriteTextAsync(file, updatedJson);
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
             {
 
             }

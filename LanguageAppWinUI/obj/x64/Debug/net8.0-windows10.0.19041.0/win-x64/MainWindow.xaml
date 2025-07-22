@@ -21,7 +21,7 @@
 
         <Border Background="#222222"
         CornerRadius="8,0,0,8" Margin="0,0,10,0" BorderThickness="0,0,2,0" BorderBrush="#181818">
-            <Grid x:ConnectionId='24' Background="#222222" Margin="0,10,0,10" x:Name="Sidebar">
+            <Grid x:ConnectionId='25' Background="#222222" Margin="0,10,0,10" x:Name="Sidebar">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
                     <RowDefinition Height="50"/>
@@ -33,7 +33,7 @@
 
                 </Grid.RowDefinitions>
                 <TextBlock Text="Language App" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="20"/>
-                <Button x:ConnectionId='25' Style="{StaticResource SidebarButton}" Grid.Row="1"                    Tag="HomePage" x:Name="HomeButton">
+                <Button x:ConnectionId='26' Style="{StaticResource SidebarButton}" Grid.Row="1"                    Tag="HomePage" x:Name="HomeButton">
 
 
 
@@ -44,28 +44,28 @@
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='26' Style="{StaticResource SidebarButton}" Grid.Row="2"                    Tag="ScenariosPage">
+                <Button x:ConnectionId='27' Style="{StaticResource SidebarButton}" Grid.Row="2"                    Tag="ScenariosPage">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
                         <Image Source="/images/grid.png" Width="18" Height="18" />
                         <TextBlock Text="Scenarios" Margin="16,0,0,0"/>
 
                     </StackPanel>
                 </Button>
-                <Button x:ConnectionId='27' Style="{StaticResource SidebarButton}" Grid.Row="3"                    Tag="FlashcardsPage">
+                <Button x:ConnectionId='28' Style="{StaticResource SidebarButton}" Grid.Row="3"                    Tag="FlashcardsPage">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
                         <Image Source="/images/noun-cards-165724.png" Width="18" Height="18" />
                         <TextBlock Text="Flashcards" Margin="16,0,0,0"/>
 
                     </StackPanel>
                 </Button>
-                <Button x:ConnectionId='28' Style="{StaticResource SidebarButton}" Grid.Row="4"                    Tag="MistakesPage">
+                <Button x:ConnectionId='29' Style="{StaticResource SidebarButton}" Grid.Row="4"                    Tag="MistakesPage">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
                         <Image Source="/images/book-open.png" Width="18" Height="18" />
                         <TextBlock Text="Mistakes" Margin="16,0,0,0"/>
 
                     </StackPanel>
                 </Button>
-                <Button x:ConnectionId='29' Style="{StaticResource SidebarButton}" Grid.Row="5"                    Tag="TipsPage">
+                <Button x:ConnectionId='30' Style="{StaticResource SidebarButton}" Grid.Row="5"                    Tag="TipsPage">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
                         <Image Source="/images/edit-2.png" Width="18" Height="18" />
                         <TextBlock Text="Tips" Margin="16,0,0,0"/>
@@ -91,63 +91,63 @@
 
 
 
-            <Button x:ConnectionId='15' Style="{StaticResource ScenarioButton}" Tag="(bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0"                     >
+            <Button x:ConnectionId='16' Style="{StaticResource ScenarioButton}" Tag="(bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/bakery.png" Height="100" Width="100"/>
                     <TextBlock Text="At the Bakery" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='16' Style="{StaticResource ScenarioButton}" Tag="(restaurant) You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1"                     >
+            <Button x:ConnectionId='17' Style="{StaticResource ScenarioButton}" Tag="(restaurant) You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/restaurant.png" Height="100" Width="100"/>
                     <TextBlock Text="Ordering at a Restaurant" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='17' Style="{StaticResource ScenarioButton}" Tag="(hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2"                     >
+            <Button x:ConnectionId='18' Style="{StaticResource ScenarioButton}" Tag="(hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/hotel.png" Height="100" Width="100"/>
                     <TextBlock Text="Checking in to a Hotel" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='18' Style="{StaticResource ScenarioButton}" Tag="(grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0"                     >
+            <Button x:ConnectionId='19' Style="{StaticResource ScenarioButton}" Tag="(grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/grocery.png" Height="100" Width="100"/>
                     <TextBlock Text="At the Grocery Store" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='19' Style="{StaticResource ScenarioButton}" Tag="(airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1"                     >
+            <Button x:ConnectionId='20' Style="{StaticResource ScenarioButton}" Tag="(airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/airport.png" Height="100" Width="100"/>
                     <TextBlock Text="At the Airport" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='20' Style="{StaticResource ScenarioButton}" Tag="(directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2"                     >
+            <Button x:ConnectionId='21' Style="{StaticResource ScenarioButton}" Tag="(directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/directions.png" Height="100" Width="100"/>
                     <TextBlock Text="Asking for Directions" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='21' Style="{StaticResource ScenarioButton}" Tag="(doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0"                     >
+            <Button x:ConnectionId='22' Style="{StaticResource ScenarioButton}" Tag="(doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/doctor.png" Height="100" Width="100"/>
                     <TextBlock Text="At the Doctor" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='22' Style="{StaticResource ScenarioButton}" Tag="(park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1"                     >
+            <Button x:ConnectionId='23' Style="{StaticResource ScenarioButton}" Tag="(park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/park.png" Height="100" Width="100"/>
                     <TextBlock Text="At the Park" Foreground="White" FontSize="20"/>
                 </StackPanel>
             </Button>
 
-            <Button x:ConnectionId='23' Style="{StaticResource ScenarioButton}" Tag="(university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2"                     >
+            <Button x:ConnectionId='24' Style="{StaticResource ScenarioButton}" Tag="(university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2"                     >
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                     <Image Source="/images/university.png" Height="100" Width="100"/>
                     <TextBlock Text="At a University" Foreground="White" FontSize="20"/>
@@ -173,18 +173,18 @@
                     <ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:ConnectionId='13' x:Name="FlashcardPackTitleText" Text="flashy (12/45)" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Margin="10"/>
+                <TextBlock x:ConnectionId='14' x:Name="FlashcardPackTitleText" Text="flashy (12/45)" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Margin="10"/>
                 <DropDownButton Style="{StaticResource MinorButton}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="64" MaxWidth="64" CornerRadius="0">
                         <Image Source="/images/menu.png" Height="30" Width="30"/>
                     <DropDownButton.Flyout>
-                        <MenuFlyout x:ConnectionId='14' Placement="Bottom" x:Name="FlashcardPacksMenuFlyout">
+                        <MenuFlyout x:ConnectionId='15' Placement="Bottom" x:Name="FlashcardPacksMenuFlyout">
                             
                         </MenuFlyout>
                     </DropDownButton.Flyout>
                 </DropDownButton>
             </Grid>
-                <Button x:ConnectionId='8' Style="{StaticResource Flashcard}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="40" Background="#222222"  MaxWidth="700" CornerRadius="16" Grid.Row="2"                        >
-                    <TextBlock x:ConnectionId='12' x:Name="FlashcardText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="White" Text="hety"/>
+                <Button x:ConnectionId='9' Style="{StaticResource Flashcard}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="40" Background="#222222"  MaxWidth="700" CornerRadius="16" Grid.Row="2"                        >
+                    <TextBlock x:ConnectionId='13' x:Name="FlashcardText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="White" Text="hety"/>
 
                 </Button>
                 <Grid Grid.Row="3" MaxWidth="700">
@@ -195,17 +195,17 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Button x:ConnectionId='9' Style="{StaticResource MinorButton}" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxHeight="85" MaxWidth="100"                      >
+                <Button x:ConnectionId='10' Style="{StaticResource MinorButton}" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxHeight="85" MaxWidth="100"                      >
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/chevronleft.png" Height="30" Width="30"/>
                     </StackPanel>
                 </Button>
-                <Button x:ConnectionId='10' Style="{StaticResource MinorButton}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxHeight="85" MaxWidth="100"                        >
+                <Button x:ConnectionId='11' Style="{StaticResource MinorButton}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxHeight="85" MaxWidth="100"                        >
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/rotate.png" Height="30" Width="30"/>
                     </StackPanel>
                 </Button>
-                <Button x:ConnectionId='11' Style="{StaticResource MinorButton}" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxHeight="85" MaxWidth="100"                       >
+                <Button x:ConnectionId='12' Style="{StaticResource MinorButton}" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxHeight="85" MaxWidth="100"                       >
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/chevronright.png" Height="30" Width="30"/>
                     </StackPanel>
@@ -213,7 +213,11 @@
             </Grid>
         </Grid>
         <Grid x:ConnectionId='6' x:Name="MistakesPage" Grid.Column="1" Tag="PageContent">
-            <TextBlock Text="mistakes" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>
+            <ScrollViewer>
+                <RichTextBlock x:ConnectionId='8' x:Name="MistakesText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" MaxWidth="700" TextWrapping="Wrap">
+                   
+                </RichTextBlock>
+            </ScrollViewer>
         </Grid>
             <Grid x:ConnectionId='7' x:Name="TipsPage" Grid.Column="1" Tag="PageContent">
                 <TextBlock Text="tips" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24"/>

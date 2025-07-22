@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Documents;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using System.Text.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -122,6 +123,12 @@ namespace LanguageAppWinUI
 
 
             }
+            if (btnTag == "MistakesPage")
+            {
+                UpdateMistakes();
+
+
+            }
         }
 
         private void ChangeSelected(Button selectedButton)
@@ -196,6 +203,43 @@ namespace LanguageAppWinUI
 
 
         }
+        private async void UpdateMistakes()
+        {
+            StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("mistakes.json");
+
+            string json = await FileIO.ReadTextAsync(file);
+            List<MistakeSentence> mistakeSentences = JsonSerializer.Deserialize<List<MistakeSentence>>(json);
+            
+            foreach (var mistakeSentence in mistakeSentences)
+            {
+                var paragraph = new Paragraph();
+
+                Run sentence = new Run
+                {
+                    Text = $"Sentence: {mistakeSentence.Sentence}\n",
+                };
+                paragraph.Inlines.Add(sentence);
+                
+                foreach (var mis in mistakeSentence.Mistakes)
+                {
+                    Run mistake = new Run
+                    {
+                        Text = $"Mistake: {mis.Incorrect}\n"
+                    };
+                    Run corrected = new Run
+                    {
+                        Text = $"Correction: {mis.Corrected}\n",
+                        Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, 0x55, 0x55, 0x55))
+                    };
+                    paragraph.Inlines.Add(mistake);
+
+                    paragraph.Inlines.Add(corrected);
+
+                }
+                MistakesText.Blocks.Add(paragraph);
+
+            }
+        }
         public async Task<List<FlashcardPack>> LoadFlashcardPacksAsync()
         {
 
@@ -217,6 +261,25 @@ namespace LanguageAppWinUI
         public string Title { get; set; }
         public List<Flashcard> Cards { get; set; }
     }
+    public class Mistake
+    {
+        public Mistake() { }
+        public string Incorrect { get; set; }
+        public string Corrected { get; set; }
+
+
+
+    }
+    public class MistakeSentence
+    {
+        public MistakeSentence() { }
+        public string Sentence { get; set; }
+        public List<Mistake> Mistakes { get; set; }
+
+    }
     
-    
-}
+        
+    }
+
+
+

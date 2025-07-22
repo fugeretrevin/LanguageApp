@@ -51,7 +51,7 @@
 
                     </StackPanel>
                 </Button>
-                <Button Style="{StaticResource SidebarButton}" Grid.Row="3" Click="SwitchPage" Tag="FlashcardsPage">
+                <Button x:Name="FlashcardsButton" Style="{StaticResource SidebarButton}" Grid.Row="3" Click="SwitchPage" Tag="FlashcardsPage">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
                         <Image Source="/images/noun-cards-165724.png" Width="18" Height="18" />
                         <TextBlock Text="Flashcards" Margin="16,0,0,0"/>
@@ -156,8 +156,63 @@
 
 
         </Grid>
-        <Grid x:Name="HomePage" Grid.Column="1" Tag="PageContent">
-            <TextBlock Text="Home" HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center"/>
+        <Grid x:Name="HomePage" Grid.Column="1" Tag="PageContent" Margin="50" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3.2*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="WelcomeText" Text="Welcome Back!" Grid.Row="0" HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" />
+            <TextBlock x:Name="YouStudiedForText" Text="You have studied for 3 minutes today. Keep it up!" Grid.Row="1" HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Margin="10"/>
+            <Grid Grid.Row="2" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" BorderThickness="1" Background="#303030" Padding="20" CornerRadius="8" Margin="20" MinWidth="200" MaxWidth="230"  MaxHeight="150">
+                    <TextBlock Text="Scenarios: Messages Sent" FontSize="16"/>
+                    <TextBlock x:Name="TotalMessagesSentText" Text="500" FontSize="40"/>
+                    <TextBlock x:Name="MessagesSentTodayText" Text="20 Today" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" BorderThickness="1" Background="#303030" Padding="20" CornerRadius="8" Margin="20" MinWidth="200" MaxWidth="230" MaxHeight="150">
+                    <TextBlock Text="Today's Tip" FontSize="16"/>
+                    <TextBlock x:Name="TodaysTipText" Text="500" FontSize="40"/>
+                    <TextBlock Text="20 Today" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" BorderThickness="1" Background="#303030" Padding="20" CornerRadius="8" Margin="20" MinWidth="200" MaxWidth="230" MaxHeight="150">
+                    <TextBlock Text="Total Time Spent Learning" FontSize="16"/>
+                    <TextBlock x:Name="TotalTimeSpentText" Text="2:20" FontSize="40"/>
+                    <TextBlock x:Name="TodaysTimeSpentText" Text="00:20 Today" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+            <TextBlock Text="Jump back in" Grid.Row="4" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" Margin="25,0,0,0"/>
+            <Grid Grid.Row="5" Margin="0,20,0,0" MaxWidth="600" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="MostRecentScenarioBlock" Style="{StaticResource Flashcard}" Margin="20,0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch"  MinHeight="150" MaxHeight="200" Width="230" Click="Button_Click">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image x:Name="MostRecentScenarioImage" Source="/images/bakery.png" Height="50" Width="50" Margin="10"/>
+                        <TextBlock x:Name="MostRecentScenarioTitle" Text="At the Bakery" FontSize="20"/>
+                        <TextBlock Text="Most Recent Scenario" FontSize="16" Foreground="#999999"/>
+
+                    </StackPanel>
+                </Button>
+                <Button x:Name="RecommendedFlashcardsBlock" Style="{StaticResource Flashcard}" Margin="20, 0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" MinHeight="150" MaxHeight="200" Width="230" Click="GoToRecommendedFlashcards">
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="/images/bakery.png" Height="50" Width="50" Margin="10"/>
+                        <TextBlock x:Name="RecommendedFlashcardsText" Text="Flashcard Pack" FontSize="20"/>
+                        <TextBlock Text="Recommended Flashcards" FontSize="16" Foreground="#999999"/>
+
+                    </StackPanel>
+                </Button>
+            </Grid>
         </Grid>
         <Grid x:Name="FlashcardsPage" Grid.Column="1" Tag="PageContent" Margin="120,10">
             <Grid.RowDefinitions>

@@ -264,6 +264,7 @@ namespace LanguageAppWinUI
                     }
 
                     await AddMistake(sen);
+                    StatsManager.LogMessageSent();
                 }
             }
 

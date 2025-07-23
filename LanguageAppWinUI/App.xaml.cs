@@ -41,9 +41,12 @@ namespace LanguageAppWinUI
         /// Invoked when the application is launched.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>
+        public static MainWindow MainWindowRef { get; private set; }
+
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
             _window = new MainWindow();
+            MainWindowRef = (MainWindow)_window;
             _window.Activate();
         }
     }

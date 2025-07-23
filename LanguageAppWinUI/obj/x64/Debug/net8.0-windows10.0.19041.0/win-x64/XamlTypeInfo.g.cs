@@ -226,47 +226,51 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[19];
+            _typeNameTable = new string[21];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "Boolean";
             _typeNameTable[4] = "Microsoft.UI.Xaml.Controls.Button";
-            _typeNameTable[5] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
-            _typeNameTable[6] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
-            _typeNameTable[7] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
-            _typeNameTable[8] = "System.Enum";
-            _typeNameTable[9] = "System.ValueType";
-            _typeNameTable[10] = "LanguageAppWinUI.ChatWindow";
-            _typeNameTable[11] = "Microsoft.UI.Xaml.Window";
-            _typeNameTable[12] = "Microsoft.UI.Xaml.Controls.DropDownButton";
-            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[14] = "LanguageAppWinUI.MainWindow";
-            _typeNameTable[15] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[16] = "Microsoft.UI.Xaml.DependencyObject";
-            _typeNameTable[17] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[18] = "Int32";
+            _typeNameTable[5] = "LanguageAppWinUI.ChatWindow";
+            _typeNameTable[6] = "Microsoft.UI.Xaml.Controls.Page";
+            _typeNameTable[7] = "Microsoft.UI.Xaml.Controls.UserControl";
+            _typeNameTable[8] = "Microsoft.UI.Xaml.Media.MicaBackdrop";
+            _typeNameTable[9] = "Microsoft.UI.Xaml.Media.SystemBackdrop";
+            _typeNameTable[10] = "Microsoft.UI.Composition.SystemBackdrops.MicaKind";
+            _typeNameTable[11] = "System.Enum";
+            _typeNameTable[12] = "System.ValueType";
+            _typeNameTable[13] = "Microsoft.UI.Xaml.Controls.DropDownButton";
+            _typeNameTable[14] = "Microsoft.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[15] = "LanguageAppWinUI.MainWindow";
+            _typeNameTable[16] = "Microsoft.UI.Xaml.Window";
+            _typeNameTable[17] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[18] = "Microsoft.UI.Xaml.DependencyObject";
+            _typeNameTable[19] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[20] = "Int32";
 
-            _typeTable = new global::System.Type[19];
+            _typeTable = new global::System.Type[21];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Boolean);
             _typeTable[4] = typeof(global::Microsoft.UI.Xaml.Controls.Button);
-            _typeTable[5] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
-            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
-            _typeTable[7] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
-            _typeTable[8] = typeof(global::System.Enum);
-            _typeTable[9] = typeof(global::System.ValueType);
-            _typeTable[10] = typeof(global::LanguageAppWinUI.ChatWindow);
-            _typeTable[11] = typeof(global::Microsoft.UI.Xaml.Window);
-            _typeTable[12] = typeof(global::Microsoft.UI.Xaml.Controls.DropDownButton);
-            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
-            _typeTable[14] = typeof(global::LanguageAppWinUI.MainWindow);
-            _typeTable[15] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
-            _typeTable[17] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[18] = typeof(global::System.Int32);
+            _typeTable[5] = typeof(global::LanguageAppWinUI.ChatWindow);
+            _typeTable[6] = typeof(global::Microsoft.UI.Xaml.Controls.Page);
+            _typeTable[7] = typeof(global::Microsoft.UI.Xaml.Controls.UserControl);
+            _typeTable[8] = typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop);
+            _typeTable[9] = typeof(global::Microsoft.UI.Xaml.Media.SystemBackdrop);
+            _typeTable[10] = typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind);
+            _typeTable[11] = typeof(global::System.Enum);
+            _typeTable[12] = typeof(global::System.ValueType);
+            _typeTable[13] = typeof(global::Microsoft.UI.Xaml.Controls.DropDownButton);
+            _typeTable[14] = typeof(global::Microsoft.UI.Xaml.Controls.ContentControl);
+            _typeTable[15] = typeof(global::LanguageAppWinUI.MainWindow);
+            _typeTable[16] = typeof(global::Microsoft.UI.Xaml.Window);
+            _typeTable[17] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[18] = typeof(global::Microsoft.UI.Xaml.DependencyObject);
+            _typeTable[19] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[20] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -302,20 +306,20 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
         }
 
         private object Activate_0_XamlControlsResources() { return new global::Microsoft.UI.Xaml.Controls.XamlControlsResources(); }
-        private object Activate_5_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
-        private object Activate_12_DropDownButton() { return new global::Microsoft.UI.Xaml.Controls.DropDownButton(); }
-        private object Activate_14_MainWindow() { return new global::LanguageAppWinUI.MainWindow(); }
-        private object Activate_15_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_8_MicaBackdrop() { return new global::Microsoft.UI.Xaml.Media.MicaBackdrop(); }
+        private object Activate_13_DropDownButton() { return new global::Microsoft.UI.Xaml.Controls.DropDownButton(); }
+        private object Activate_15_MainWindow() { return new global::LanguageAppWinUI.MainWindow(); }
+        private object Activate_17_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
-        private void StaticInitializer_5_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
-        private void StaticInitializer_7_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
-        private void StaticInitializer_8_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
-        private void StaticInitializer_9_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
-        private void StaticInitializer_10_ChatWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::LanguageAppWinUI.ChatWindow).TypeHandle);
-        private void StaticInitializer_12_DropDownButton() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.DropDownButton).TypeHandle);
-        private void StaticInitializer_14_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::LanguageAppWinUI.MainWindow).TypeHandle);
-        private void StaticInitializer_15_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_17_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_5_ChatWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::LanguageAppWinUI.ChatWindow).TypeHandle);
+        private void StaticInitializer_8_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
+        private void StaticInitializer_10_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
+        private void StaticInitializer_11_Enum() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Enum).TypeHandle);
+        private void StaticInitializer_12_ValueType() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.ValueType).TypeHandle);
+        private void StaticInitializer_13_DropDownButton() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.DropDownButton).TypeHandle);
+        private void StaticInitializer_15_MainWindow() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::LanguageAppWinUI.MainWindow).TypeHandle);
+        private void StaticInitializer_17_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_19_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -323,7 +327,7 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
             var newItem = (global::System.Object)item;
             collection.Add(newKey, newItem);
         }
-        private void VectorAdd_17_IList(object instance, object item)
+        private void VectorAdd_19_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -365,72 +369,80 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
                 xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
+            case 5:   //  LanguageAppWinUI.ChatWindow
+                userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Page"));
+                userType.StaticInitializer = StaticInitializer_5_ChatWindow;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Microsoft.UI.Xaml.Controls.Page
+                xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Microsoft.UI.Xaml.Controls.UserControl
+                xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Microsoft.UI.Xaml.Media.MicaBackdrop
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Media.SystemBackdrop"));
-                userType.Activator = Activate_5_MicaBackdrop;
-                userType.StaticInitializer = StaticInitializer_5_MicaBackdrop;
+                userType.Activator = Activate_8_MicaBackdrop;
+                userType.StaticInitializer = StaticInitializer_8_MicaBackdrop;
                 userType.AddMemberName("Kind");
                 xamlType = userType;
                 break;
 
-            case 6:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
+            case 9:   //  Microsoft.UI.Xaml.Media.SystemBackdrop
                 xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
+            case 10:   //  Microsoft.UI.Composition.SystemBackdrops.MicaKind
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.StaticInitializer = StaticInitializer_7_MicaKind;
+                userType.StaticInitializer = StaticInitializer_10_MicaKind;
                 userType.AddEnumValue("Base", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.Base);
                 userType.AddEnumValue("BaseAlt", global::Microsoft.UI.Composition.SystemBackdrops.MicaKind.BaseAlt);
                 xamlType = userType;
                 break;
 
-            case 8:   //  System.Enum
+            case 11:   //  System.Enum
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.StaticInitializer = StaticInitializer_8_Enum;
+                userType.StaticInitializer = StaticInitializer_11_Enum;
                 xamlType = userType;
                 break;
 
-            case 9:   //  System.ValueType
+            case 12:   //  System.ValueType
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.StaticInitializer = StaticInitializer_9_ValueType;
+                userType.StaticInitializer = StaticInitializer_12_ValueType;
                 xamlType = userType;
                 break;
 
-            case 10:   //  LanguageAppWinUI.ChatWindow
-                userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.StaticInitializer = StaticInitializer_10_ChatWindow;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 11:   //  Microsoft.UI.Xaml.Window
-                xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 12:   //  Microsoft.UI.Xaml.Controls.DropDownButton
+            case 13:   //  Microsoft.UI.Xaml.Controls.DropDownButton
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Controls.Button"));
-                userType.Activator = Activate_12_DropDownButton;
-                userType.StaticInitializer = StaticInitializer_12_DropDownButton;
+                userType.Activator = Activate_13_DropDownButton;
+                userType.StaticInitializer = StaticInitializer_13_DropDownButton;
                 xamlType = userType;
                 break;
 
-            case 13:   //  Microsoft.UI.Xaml.Controls.ContentControl
+            case 14:   //  Microsoft.UI.Xaml.Controls.ContentControl
                 xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  LanguageAppWinUI.MainWindow
+            case 15:   //  LanguageAppWinUI.MainWindow
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.Window"));
-                userType.Activator = Activate_14_MainWindow;
-                userType.StaticInitializer = StaticInitializer_14_MainWindow;
+                userType.Activator = Activate_15_MainWindow;
+                userType.StaticInitializer = StaticInitializer_15_MainWindow;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 16:   //  Microsoft.UI.Xaml.Window
+                xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 17:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_15_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_15_TreeViewNode;
+                userType.Activator = Activate_17_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_17_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -442,19 +454,19 @@ namespace LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 16:   //  Microsoft.UI.Xaml.DependencyObject
+            case 18:   //  Microsoft.UI.Xaml.DependencyObject
                 xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 19:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_17_IList;
-                userType.CollectionAdd = VectorAdd_17_IList;
+                userType.StaticInitializer = StaticInitializer_19_IList;
+                userType.CollectionAdd = VectorAdd_19_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 18:   //  Int32
+            case 20:   //  Int32
                 xamlType = new global::LanguageAppWinUI.LanguageAppWinUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

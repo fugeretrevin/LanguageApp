@@ -15,6 +15,8 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Dispatching;
+
 using Microsoft.UI.Xaml.Documents;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
@@ -26,6 +28,7 @@ using Windows.Foundation.Collections;
 using Windows.Media.Core;
 using Windows.Media.Playback;
 using Windows.Storage;
+using Windows.Security.ExchangeActiveSyncProvisioning;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -37,36 +40,35 @@ namespace LanguageAppWinUI
     /// An empty window that can be used on its own or navigated to within a Frame.
     /// </summary>
 
-    public sealed partial class ChatWindow : Window
+    public sealed partial class ChatWindow : Page
     {
             private static readonly HttpClient client = new HttpClient();
-            public ChatWindow(string scenario)
-
+        private readonly Action _returnCallback;
+        private readonly string _scenario;
+        public ChatWindow(string scenario, Action returnCallback)
             {
             this.InitializeComponent();
-
+            _returnCallback = returnCallback;
+            _scenario = scenario;
             SetScenario(scenario);
 
-            }
+        }
 
+       
         private async void SetScenario(string scenario)
         {
 
 
             // Set the source and play
 
-            var videoUri = new Uri("ms-appx:///Assets/videos/loading.mp4");
-            var mediaPlayer = new MediaPlayer();
-            mediaPlayer.Source = MediaSource.CreateFromUri(videoUri);
-            mediaPlayer.MediaEnded += MediaPlayer_MediaEnded;
 
             // Set to MediaPlayerElement
-            LoadingVideo.SetMediaPlayer(mediaPlayer);
-            LoadingVideo.Visibility = Visibility.Visible;
-            MainContent.Visibility = Visibility.Collapsed;
+
 
             // Start playback
-            mediaPlayer.Play(); 
+            int end = scenario.IndexOf(".");
+            string scenarioTitle = scenario.Substring(0, end);
+            ScenarioTitleText.Text = scenarioTitle;
 
             string aiResponse = await SendMessageAsync(scenario);
             aiResponse = aiResponse.Substring(0, aiResponse.IndexOf("Feedback:"));
@@ -75,11 +77,10 @@ namespace LanguageAppWinUI
             ChatDisplay.Blocks.Add(aiResponseParagraph);
 
             int start = scenario.IndexOf('(') + 1;
-            int end = scenario.IndexOf(')');
+            end = scenario.IndexOf(')');
             string imageName = scenario.Substring(start, end - start);
             string imageSource = $"ms-appx:///images/{imageName}.png";
             scenarioImage.Source = new BitmapImage(new Uri(imageSource));
-
 
         }
 
@@ -211,6 +212,8 @@ namespace LanguageAppWinUI
                 int startInd = 0;
                 var correctedUserInputParagraph = new Paragraph();
                 correctedUserInputParagraph.Inlines.Add(new Run { Text = $"{correctedUserInput}\n" });
+                CorrectedUserDisplay.IsReadOnly = false;
+
                 CorrectedUserDisplay.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, correctedUserInput);
                 var fullRange = CorrectedUserDisplay.Document.GetRange(0, int.MaxValue);
                 fullRange.CharacterFormat.ForegroundColor = Microsoft.UI.Colors.White;
@@ -266,11 +269,13 @@ namespace LanguageAppWinUI
                     await AddMistake(sen);
                     StatsManager.LogMessageSent();
                 }
-            }
+                CorrectedUserDisplay.IsReadOnly = true;
 
             }
 
-            private async Task AddMistake(MistakeSentence sentence)
+        }
+
+        private async Task AddMistake(MistakeSentence sentence)
             {
             string fileName = "mistakes.json";
             StorageFile file;
@@ -312,15 +317,15 @@ namespace LanguageAppWinUI
             {
 
             }
-        private void MediaPlayer_MediaEnded(MediaPlayer sender, object args)
+
+
+        private void GoHome(object sender, RoutedEventArgs e)
         {
-            // Switch UI thread before modifying visuals
-            DispatcherQueue.TryEnqueue(() =>
-            {
-                LoadingVideo.Visibility = Visibility.Collapsed;
-                MainContent.Visibility = Visibility.Visible;
-            });
+            _returnCallback?.Invoke();
+          
+
         }
+        
 
     }
     }

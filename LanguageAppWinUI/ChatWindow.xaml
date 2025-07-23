@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window
+<Page
     x:Class="LanguageAppWinUI.ChatWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LanguageAppWinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Title="ChatWindow">
+    mc:Ignorable="d">
 
-    <Window.SystemBackdrop>
-        <MicaBackdrop />
-    </Window.SystemBackdrop>
+
+
 
     <Grid>
-        
-        <MediaPlayerElement x:Name="LoadingVideo"
+
+                <MediaPlayerElement x:Name="LoadingVideo"
             AutoPlay="False"
             AreTransportControlsEnabled="False"
             Visibility="Collapsed"
@@ -24,36 +22,49 @@
             VerticalAlignment="Stretch"
             Stretch="UniformToFill"
                     Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
-    <Grid x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
-       
-            <RichTextBlock Name="ChatDisplay" Foreground="White">
-                
-            </RichTextBlock>
-      
-        </ScrollViewer>
-        
-        <RichTextBlock Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" >
-            <Paragraph>
-                <Run Text="Feedback area"></Run>
-            </Paragraph>
-        </RichTextBlock>
-        <RichEditBox Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" >
-            
-        </RichEditBox>
+
+                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100" Click="GoHome">
+                            <Image Source="/images/back.png" Height="30" Width="30"/>
+                        </Button>
+                        <TextBlock x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
+                    </StackPanel>
+                    <Grid x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10" Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
+
+                            <RichTextBlock Name="ChatDisplay" Foreground="White" FontFamily="Segoe UI Variable">
+
+                            </RichTextBlock>
+
+                        </ScrollViewer>
+
+                        <RichTextBlock Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" FontFamily="Segoe UI Variable">
+                            <Paragraph>
+                                <Run Text="Feedback area"></Run>
+                            </Paragraph>
+                        </RichTextBlock>
+                        <RichEditBox Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True">
+
+                        </RichEditBox>
 
 
-            <RichEditBox Name="InputBox"
+                        <RichEditBox Name="InputBox"
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"
@@ -66,10 +77,10 @@
                 Grid.Column="1" 
                 Padding="4" 
                 Margin="10"
-                />
-        <Image x:Name="scenarioImage" Width="200" Height="200" Grid.Row="1" Grid.Column="0"></Image>
-   
-    </Grid>
-    </Grid>
+                FontFamily="Segoe UI Variable"/>
+                        <Image x:Name="scenarioImage" MinWidth="150" MinHeight="150"  MaxWidth="200" MaxHeight="200" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
 
-</Window>
+                    </Grid>
+                </Grid>
+            </Grid>
+</Page>

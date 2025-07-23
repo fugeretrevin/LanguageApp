@@ -32,6 +32,7 @@ namespace LanguageAppWinUI
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+        public static Frame AppFrame { get; private set; }
 
         private Window _chatWindow;
         List<FlashcardPack> flashcardPacks;
@@ -40,6 +41,9 @@ namespace LanguageAppWinUI
         Flashcard currentCard;
         int currentCardIndex = 0;
         int flashcardSelection;
+        private UIElement _originalContent;
+
+
 
         UserStats stats;
         private DispatcherTimer _timeLoggerTimer;
@@ -52,6 +56,11 @@ namespace LanguageAppWinUI
             SwitchPage(sender: HomeButton, e: new RoutedEventArgs());
             stats = StatsManager.LoadStats();
             StartTimeLogger();
+            _originalContent = this.Content;
+
+
+
+
 
 
         }
@@ -59,7 +68,7 @@ namespace LanguageAppWinUI
         private void StartTimeLogger()
         {
             _timeLoggerTimer = new DispatcherTimer();
-            _timeLoggerTimer.Interval = TimeSpan.FromSeconds(60);
+            _timeLoggerTimer.Interval = TimeSpan.FromSeconds(10);
             _timeLoggerTimer.Tick += TimeLogger_Tick;
             _timeLoggerTimer.Start();
 
@@ -68,43 +77,34 @@ namespace LanguageAppWinUI
         }
         private void TimeLogger_Tick(object sender, object e)
         {
-            StatsManager.LogTimeSpent(60);
+            StatsManager.LogTimeSpent(10);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            /*var dialog = new ContentDialog
-            {
-                Title = "Hello!",
-                Content = "You clicked the button.",
-                CloseButtonText = "OK",
-                XamlRoot = this.Content.XamlRoot // Required for ContentDialog
-
-            };
             
-            _ = dialog.ShowAsync();
-            */
-            if (_chatWindow == null)
-            {
-                if (sender is Button btn && btn.Tag is string scenario)
-                {
-                    StatsManager.ChangeMostRecentScenario(scenario);
-                    UpdateMostRecentTile(scenario);
 
+           
+                 if (sender is Button btn && btn.Tag is string scenario)
+                 {
+                     StatsManager.ChangeMostRecentScenario(scenario);
+                     UpdateMostRecentTile(scenario);
+                this.Content = new ChatWindow(scenario, ReturnToMainUI);
 
-                    _chatWindow = new ChatWindow(scenario);
-                }
-
-                   
-
-                _chatWindow.Closed += (s, args) => _chatWindow = null;
             }
 
 
 
-            _chatWindow.Activate();
         }
 
+
+
+
+        private void ReturnToMainUI()
+        {
+            this.Content = _originalContent;
+            UpdateHomePage();
+        }
         private void UpdateMostRecentTile(string scenario)
         {
             int start = scenario.IndexOf('(') + 1;
@@ -206,17 +206,34 @@ namespace LanguageAppWinUI
 
         private async void UpdateHomePage()
         {
-            var today = DateTime.Now.ToString("yyyy-MM-dd");
-            int todaysMessages = stats.DailyStats.ContainsKey(today) ? stats.DailyStats[today].MessagesSent : 0;
-            int todaysTimeSec = stats.DailyStats.ContainsKey(today) ? stats.DailyStats[today].TimeSpentSeconds : 0;
+            var today = DateTime.Now.Date;
+            var todayString = DateTime.Now.ToString("yyyy-MM-dd");
+            int todaysMessages = stats.DailyStats.ContainsKey(todayString) ? stats.DailyStats[todayString].MessagesSent : 0;
+            int todaysTimeSec = stats.DailyStats.ContainsKey(todayString) ? stats.DailyStats[todayString].TimeSpentSeconds : 0;
             string todaysTimeFormatted = TimeSpan.FromSeconds(todaysTimeSec).ToString(@"hh\:mm");
 
+            if (stats.LastTipDate != today || string.IsNullOrWhiteSpace(stats.TodaysTip?.TipText))
+            {
+                List<Tip> tipBank = await LoadTips();
+
+                if (tipBank != null && tipBank.Count > 0)
+                {
+                    Random rnd = new Random();
+                    stats.TodaysTip = tipBank[rnd.Next(tipBank.Count)];
+                    stats.LastTipDate = today; // save today's date
+                    StatsManager.SaveStats(); // <-- add this!
+
+                }
+            }
+            TodaysTipText.Text = stats.TodaysTip.TipText;
+            TodaysDateText.Text = DateTime.Now.ToString("dd-MM-yyyy");
 
             string totalTimeFormatted = TimeSpan.FromSeconds(stats.TotalTimeSpentSeconds).ToString(@"hh\:mm");
             TotalTimeSpentText.Text = totalTimeFormatted;
             TodaysTimeSpentText.Text = $"{todaysTimeFormatted} Today";
             TotalMessagesSentText.Text = stats.TotalMessagesSent.ToString();
             MessagesSentTodayText.Text = $"{todaysMessages} Today";
+
 
             if (stats.TotalTimeSpentSeconds < 600)
             {
@@ -227,7 +244,7 @@ namespace LanguageAppWinUI
                 WelcomeText.Text = "Welcome back!";
 
             }
-            if (todaysTimeSec > 600) {
+            if (todaysTimeSec >= 600) {
                 YouStudiedForText.Text = $"You have studied for {todaysTimeSec / 60} minutes today. Great work!";
 
             }
@@ -236,7 +253,7 @@ namespace LanguageAppWinUI
                 YouStudiedForText.Text = $"You have studied for {todaysTimeSec / 60} minutes today. Keep it up!";
 
             }
-            else
+            else if (todaysTimeSec <= 120)
             {
                 YouStudiedForText.Text = $"Explore your stats and learning options below";
 
@@ -346,16 +363,25 @@ namespace LanguageAppWinUI
         }
         private async void UpdateMistakes()
         {
+            int counter = 0;
             MistakesText.Blocks.Clear();
 
             StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("mistakes.json");
 
             string json = await FileIO.ReadTextAsync(file);
             List<MistakeSentence> mistakeSentences = JsonSerializer.Deserialize<List<MistakeSentence>>(json);
-            
-            foreach (var mistakeSentence in mistakeSentences)
+
+            var paragraph = new Paragraph();
+
+            paragraph.Inlines.Add(new Run { Text = "\n" });
+            MistakesText.Blocks.Add(paragraph);
+            for (int i = mistakeSentences.Count - 1; i >= 0; i--)
             {
-                var paragraph = new Paragraph();
+                var mistakeSentence = mistakeSentences[i];
+                paragraph = new Paragraph();
+
+              
+
 
                 Run sentence = new Run
                 {
@@ -380,6 +406,11 @@ namespace LanguageAppWinUI
 
                 }
                 MistakesText.Blocks.Add(paragraph);
+                counter++;
+                if (counter > 30)
+                {
+                    break;
+                }
 
             }
         }
@@ -389,6 +420,14 @@ namespace LanguageAppWinUI
             StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/flashcards.json")); 
             string json = await FileIO.ReadTextAsync(file);
             return JsonSerializer.Deserialize<List<FlashcardPack>>(json);
+        }
+
+        public async Task<List<Tip>> LoadTips()
+        {
+
+            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/tips.json"));
+            string json = await FileIO.ReadTextAsync(file);
+            return JsonSerializer.Deserialize<List<Tip>>(json);
         }
     }
     public class Flashcard
@@ -432,9 +471,21 @@ namespace LanguageAppWinUI
         public int TotalMessagesSent { get; set; }
         public int TotalTimeSpentSeconds { get; set; }
         public string MostRecentScenario { get; set; }
+        public Tip TodaysTip { get; set; }
+        public DateTime LastTipDate { get; set; }
+
+
         public Dictionary<string, DailyStats> DailyStats { get; set; } = new();
 
     }
+
+    public class Tip
+    {
+        public Tip() { }
+        public string TipText { get; set; }
+
+    }
+
     public static class StatsManager
     {
         private static readonly string StatsFilePath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "stats.json");
@@ -489,6 +540,8 @@ namespace LanguageAppWinUI
             _stats.DailyStats[today].TimeSpentSeconds += seconds;
             SaveStats();
         }
+
+        
     }
     }
 

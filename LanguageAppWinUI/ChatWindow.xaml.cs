@@ -92,7 +92,7 @@ namespace LanguageAppWinUI
 
                 try
                 {
-                    var response = await client.PostAsync("http://localhost:5000/chat", content);
+                    var response = await client.PostAsync("https://web-production-a5f66.up.railway.app/chat", content);
                     response.EnsureSuccessStatusCode();
 
                     var responseString = await response.Content.ReadAsStringAsync();

@@ -289,6 +289,11 @@ namespace LanguageAppWinUI
 
         }
 
+        private void ExitApp(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Exit();
+        }
+
         private void ChangeSelected(Button selectedButton)
         {
             foreach (var child in Sidebar.Children)

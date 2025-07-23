@@ -26,6 +26,7 @@
     <None Remove="images\doctor.png" />
     <None Remove="images\edit-2.png" />
     <None Remove="images\edit-2.svg" />
+    <None Remove="images\exit.png" />
     <None Remove="images\flashcards.png" />
     <None Remove="images\grid.png" />
     <None Remove="images\grid.svg" />
@@ -54,6 +55,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\compass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\exit.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\flashcards.png">

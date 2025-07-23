@@ -23,7 +23,7 @@
 
             <Border Background="#222222"
         CornerRadius="8,0,0,8" BorderThickness="0,0,2,0" BorderBrush="#181818">
-                <Grid Background="#222222" Margin="0,10,0,10" x:Name="Sidebar">
+                <Grid Background="#222222" Margin="0,10,0,10" x:Name="Sidebar" VerticalAlignment="Stretch">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
                         <RowDefinition Height="50"/>
@@ -31,7 +31,7 @@
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50" />
 
                     </Grid.RowDefinitions>
                     <TextBlock Text="Language App" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="20" FontFamily="Segoe UI Variable"/>
@@ -64,6 +64,13 @@
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
                             <Image Source="/images/book-open.png" Width="18" Height="18" />
                             <TextBlock Text="Mistakes" Margin="16,0,0,0"/>
+
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource SidebarButton}" Grid.Row="5" Click="ExitApp" Tag="ExitButton" VerticalAlignment="Bottom">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Padding="16,0,0,0">
+                            <Image Source="/images/exit.png" Width="18" Height="18" />
+                            <TextBlock Text="Exit" Margin="16,0,0,0"/>
 
                         </StackPanel>
                     </Button>

@@ -55,6 +55,9 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\compass.png">
       <PackagePath>images\compass.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\exit.png">
+      <PackagePath>images\exit.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\flashcards.png">
       <PackagePath>images\flashcards.png</PackagePath>
     </AppxPackagedFile>

@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>1B3F71450A8BD7CCFCA16E8859092D263F2CB1E504AAF0755BFD47E2529B01D8</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>393D96079CF8205C22E541D6EA445B7D5232D24A7D34A0EC03F0805BEB2C3055</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>fb631a49-30d1-43aa-bdda-89e2964dcc4e_1.0.0.0_x64__cs0hbdqmz4dp2</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>fb631a49-30d1-43aa-bdda-89e2964dcc4e_cs0hbdqmz4dp2!App</RegisteredUserModeAppID>
     <RegisteredPackageID>fb631a49-30d1-43aa-bdda-89e2964dcc4e</RegisteredPackageID>
@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-07-24T02:47:58.463</Modified>
+      <Modified>2025-07-24T23:03:37.388</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-07-23T23:02:14.353</Modified>
+      <Modified>2025-07-24T22:59:33.966</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.runtimeconfig.json">
       <PackagePath>LanguageAppWinUI.runtimeconfig.json</PackagePath>
@@ -43,15 +43,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.dll">
       <PackagePath>LanguageAppWinUI.dll</PackagePath>
-      <Modified>2025-07-24T02:47:58.052</Modified>
+      <Modified>2025-07-24T23:03:37.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
-      <Modified>2025-07-24T02:47:58.060</Modified>
+      <Modified>2025-07-24T23:03:37.123</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\flashcards.json">
       <PackagePath>Assets\flashcards.json</PackagePath>
       <Modified>2025-07-21T22:45:07.071</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logo.png">
+      <PackagePath>Assets\logo.png</PackagePath>
+      <Modified>2025-07-24T21:52:16.319</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logoWithText.png">
+      <PackagePath>Assets\logoWithText.png</PackagePath>
+      <Modified>2025-07-24T21:34:49.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\tips.json">
       <PackagePath>Assets\tips.json</PackagePath>
@@ -80,6 +88,10 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\flashcards.png">
       <PackagePath>images\flashcards.png</PackagePath>
       <Modified>2025-07-23T15:09:16.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\logoWithText.png">
+      <PackagePath>images\logoWithText.png</PackagePath>
+      <Modified>2025-07-24T21:34:49.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\menu.png">
       <PackagePath>images\menu.png</PackagePath>
@@ -1015,7 +1027,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.deps.json">
       <PackagePath>LanguageAppWinUI.deps.json</PackagePath>
-      <Modified>2025-07-23T20:31:29.331</Modified>
+      <Modified>2025-07-24T22:00:16.772</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -1023,11 +1035,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <Modified>2025-07-14T20:43:15.172</Modified>
+      <Modified>2025-07-24T21:54:00.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-07-14T20:43:15.189</Modified>
+      <Modified>2025-07-24T21:54:58.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
@@ -1037,9 +1049,29 @@
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <Modified>2025-07-14T20:43:15.189</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.backup.png">
+      <PackagePath>Assets\StoreLogo.backup.png</PackagePath>
       <Modified>2025-07-14T20:43:15.203</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <Modified>2025-07-24T21:59:19.161</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <Modified>2025-07-24T21:59:19.172</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <Modified>2025-07-24T21:59:19.172</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <Modified>2025-07-24T21:59:19.184</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <Modified>2025-07-24T21:59:19.191</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\videos\loading.mp4">
       <PackagePath>Assets\videos\loading.mp4</PackagePath>
@@ -1047,7 +1079,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <Modified>2025-07-14T20:43:15.207</Modified>
+      <Modified>2025-07-24T21:55:09.688</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -25,7 +25,7 @@
         CornerRadius="8,0,0,8" BorderThickness="0,0,2,0" BorderBrush="#181818">
                 <Grid x:ConnectionId='39' Background="#222222" Margin="0,10,0,10" x:Name="Sidebar" VerticalAlignment="Stretch">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition MinHeight="130" MaxHeight="180"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
@@ -33,7 +33,7 @@
                         <RowDefinition Height="*"/>
 
                     </Grid.RowDefinitions>
-                    <TextBlock Text="Language App" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" FontSize="20" FontFamily="Segoe UI Variable"/>
+                    <Image Source="/images/logoWithText.png" MinWidth="100" MaxWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Margin="20,0,20,0"/>
                     <Button x:ConnectionId='40' Style="{StaticResource SidebarButton}" Grid.Row="1"                    Tag="HomePage" x:Name="HomeButton">
 
 

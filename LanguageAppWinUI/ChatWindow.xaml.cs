@@ -10,16 +10,18 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.UI;
+using Microsoft.UI.Dispatching;
 using Microsoft.UI.Text;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Dispatching;
 
 using Microsoft.UI.Xaml.Documents;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml.Navigation;
 using Newtonsoft.Json;
@@ -27,8 +29,8 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
 using Windows.Media.Playback;
-using Windows.Storage;
 using Windows.Security.ExchangeActiveSyncProvisioning;
+using Windows.Storage;
 
 
 // To learn more about WinUI, the WinUI project structure,
@@ -66,15 +68,15 @@ namespace LanguageAppWinUI
 
 
             // Start playback
+            AnimatedContainer.Visibility = Visibility.Collapsed;
             int end = scenario.IndexOf(".");
             string scenarioTitle = scenario.Substring(0, end);
             ScenarioTitleText.Text = scenarioTitle;
 
             string aiResponse = await SendMessageAsync(scenario);
             aiResponse = aiResponse.Substring(0, aiResponse.IndexOf("Feedback:"));
-            var aiResponseParagraph = new Paragraph();
-            aiResponseParagraph.Inlines.Add(new Run { Text = $"{aiResponse}" });
-            ChatDisplay.Blocks.Add(aiResponseParagraph);
+            aiResponse = aiResponse.Trim();
+            AddChatBubble(aiResponse, false);
 
             int start = scenario.IndexOf('(') + 1;
             end = scenario.IndexOf(')');
@@ -124,15 +126,20 @@ namespace LanguageAppWinUI
                     return;
 
                 InputBox.IsEnabled = false;
-
+                AnimateOutAndHide();
                 InputBox.Document.GetText(Microsoft.UI.Text.TextGetOptions.None, out string userInput);
                 InputBox.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, "");
-
                 try
                 {
-                    var paragraph = new Paragraph();
-                    paragraph.Inlines.Add(new Run { Text = $"You: {userInput}" });
-                    ChatDisplay.Blocks.Add(paragraph);
+                    userInput = userInput.Trim();
+                    AddChatBubble(userInput, true);
+                    DispatcherQueue.TryEnqueue(async () =>
+                    {
+                        await Task.Delay(50); // Let layout update
+                        ChatScrollViewer.ChangeView(null, ChatScrollViewer.ScrollableHeight, null, false);
+                    });
+
+
                     string aiOutput = await SendMessageAsync(userInput);
                     string aiResponse = aiOutput.Substring(0, aiOutput.IndexOf("Feedback:"));
                     string aiFeedback = aiOutput.Substring(aiOutput.IndexOf("Feedback:"));
@@ -192,14 +199,11 @@ namespace LanguageAppWinUI
 
 
                     }
-                    var aiResponseParagraph = new Paragraph();
                     var aiFeedbackParagraph = new Paragraph();
 
-                    aiResponseParagraph.Inlines.Add(new Run { Text = $"{aiResponse}\n" });
                     aiFeedbackParagraph.Inlines.Add(new Run { Text = $"{aiFeedback}\n" });
-
-                    ChatDisplay.Blocks.Add(aiResponseParagraph);
-                    AiFeedbackDisplay.Blocks.Add(aiFeedbackParagraph);
+                    aiResponse = aiResponse.Trim();
+                    AddChatBubble(aiResponse, false);
                     string correctedUserInput = userInput;
                     foreach (string x in spellingMistakes)
                     {
@@ -268,7 +272,7 @@ namespace LanguageAppWinUI
                             Mistake m = new Mistake();
                             m.Incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
                             m.Corrected = x.Substring(x.IndexOf(" - ") + 3).Trim();
-                            if(m.Incorrect != m.Corrected && !m.Incorrect.Contains("User Grammar Mistake") && !m.Incorrect.Contains("User Misspelling"))
+                            if((m.Incorrect.Trim() != m.Corrected.Trim()) && !m.Incorrect.Contains("User Grammar Mistake") && !m.Incorrect.Contains("User Misspelling"))
                             {
                                 sen.Mistakes.Add(m);
 
@@ -279,24 +283,36 @@ namespace LanguageAppWinUI
                             Mistake m = new Mistake();
                             m.Incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
                             m.Corrected = x.Substring(x.IndexOf(" - ") + 3).Trim();
-                            if (m.Incorrect != m.Corrected && !m.Incorrect.Contains("User Grammar Mistake") && !m.Incorrect.Contains("User Misspelling"))
+                            if ((m.Incorrect.Trim() != m.Corrected.Trim()) && !m.Incorrect.Contains("User Grammar Mistake") && !m.Incorrect.Contains("User Misspelling") && m.Corrected.Trim() != "?")
                             {
                                 sen.Mistakes.Add(m);
 
                             }
                         }
+                        CorrectedUserDisplay.Document.GetText(TextGetOptions.None, out string correctedText);
 
-                        await AddMistake(sen);
+                        if (sen.Mistakes.Count != 0 && correctedText.Trim() != "?")
+                        {
+                            AnimateIn();
+                        }
+                        if (sen.Mistakes.Count != 0)
+                        {
+                            await AddMistake(sen);
+
+                        }
                     }
                     StatsManager.LogMessageSent();
                 }
                 finally
                 {
+                    
                     InputBox.IsEnabled = true;
                     InputBox.Document.SetText(Microsoft.UI.Text.TextSetOptions.None, "");
                     InputBox.Document.Selection.StartPosition = 0;
                     InputBox.Document.Selection.EndPosition = 0;
                     CorrectedUserDisplay.IsReadOnly = true;
+                    InputBox.Focus(FocusState.Programmatic);
+
 
                 }
                 CorrectedUserDisplay.IsReadOnly = true;
@@ -355,7 +371,119 @@ namespace LanguageAppWinUI
           
 
         }
-        
+        private void AddChatBubble(string message, bool isUser)
+        {
+            Border bubble = new Border
+            {
+                Background = isUser ? new SolidColorBrush(Colors.SteelBlue) : new SolidColorBrush(ColorHelper.FromArgb(255, 26, 26, 26)),
+                CornerRadius = new CornerRadius(12),
+                Margin = new Thickness(5,5,5,10),
+                Padding = new Thickness(10),
+                MaxWidth = 400,
+                HorizontalAlignment = isUser ? HorizontalAlignment.Right : HorizontalAlignment.Left,
+                Opacity = 0, // Start invisible
+                RenderTransform = new TranslateTransform { X = isUser ? 50 : -50 } // Slide in
+
+            };
+
+            TextBlock text = new TextBlock
+            {
+                Text = message,
+                Foreground = new SolidColorBrush(Colors.White),
+                FontFamily = new FontFamily("Segoe UI Variable Text"),
+                FontSize = 18,
+                TextWrapping = TextWrapping.WrapWholeWords
+            };
+
+            bubble.Child = text;
+            ChatStackPanel.Children.Add(bubble);
+
+            // Scroll to bottom
+            DispatcherQueue.TryEnqueue(() =>
+            {
+                ChatScrollViewer.ChangeView(null, ChatScrollViewer.ScrollableHeight, null, false);
+            });
+            AnimateChatBubble(bubble);
+
+
+        }
+
+        private void AnimateIn()
+        {
+            var slideIn = new DoubleAnimation
+            {
+                From = 300, // start offset (px)
+                To = 0,
+                Duration = new Duration(TimeSpan.FromMilliseconds(400)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            Storyboard.SetTarget(slideIn, SlideTransform);
+            Storyboard.SetTargetProperty(slideIn, "X");
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(slideIn);
+            
+            AnimatedContainer.Visibility = Visibility.Visible;
+            
+            storyboard.Begin();
+        }
+
+        private void AnimateOutAndHide()
+        {
+            var slideOut = new DoubleAnimation
+            {
+                From = 0,
+                To = 300, // slide right
+                Duration = new Duration(TimeSpan.FromMilliseconds(300)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseIn }
+            };
+
+            Storyboard.SetTarget(slideOut, SlideTransform);
+            Storyboard.SetTargetProperty(slideOut, "X");
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(slideOut);
+            storyboard.Completed += (s, e) =>
+            {
+                AnimatedContainer.Visibility = Visibility.Collapsed;
+            };
+            storyboard.Begin();
+        }
+
+
+
+        private void AnimateChatBubble(UIElement bubble)
+        {
+            var storyboard = new Storyboard();
+
+            // Fade-in animation
+            var fade = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = new Duration(TimeSpan.FromMilliseconds(600))
+            };
+            Storyboard.SetTarget(fade, bubble);
+            Storyboard.SetTargetProperty(fade, "Opacity");
+
+            // Slide animation
+            var slide = new DoubleAnimation
+            {
+                From = ((TranslateTransform)bubble.RenderTransform).X,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromMilliseconds(600)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
+            };
+            Storyboard.SetTarget(slide, bubble);
+            Storyboard.SetTargetProperty(slide, "(UIElement.RenderTransform).(TranslateTransform.X)");
+
+            storyboard.Children.Add(fade);
+            storyboard.Children.Add(slide);
+            storyboard.Begin();
+        }
+
+
 
     }
     public class ApiResponse

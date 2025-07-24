@@ -25,15 +25,15 @@
 
                 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="80"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:ConnectionId='9' Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100"               >
-                            <Image Source="/images/back.png" Height="30" Width="30"/>
+                    <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,4" BorderBrush="#191919">
+                <Button x:ConnectionId='11' Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100"                IsTabStop="False">
+                            <Image Source="/images/back.png" Height="25" Width="25"/>
                         </Button>
-                        <TextBlock x:ConnectionId='10' x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
+                        <TextBlock x:ConnectionId='12' x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
                     </StackPanel>
                     <Grid x:ConnectionId='3' x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10" Grid.Row="1">
                         <Grid.RowDefinitions>
@@ -46,25 +46,29 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
+                        <ScrollViewer x:ConnectionId='4' x:Name="ChatScrollViewer"  Background="#FF29292B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1" CornerRadius="16">
+                        <StackPanel x:ConnectionId='10' x:Name="ChatStackPanel" Orientation="Vertical" Margin="10"/>
+                    <!-- Chat messages will be added here dynamically -->
 
-                            <RichTextBlock x:ConnectionId='8' Name="ChatDisplay" Foreground="White" FontFamily="Segoe UI Variable">
-
-                            </RichTextBlock>
 
                         </ScrollViewer>
 
-                        <RichTextBlock x:ConnectionId='4' Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" FontFamily="Segoe UI Variable">
-                            <Paragraph>
-                                <Run Text="Feedback area"></Run>
-                            </Paragraph>
-                        </RichTextBlock>
-                        <RichEditBox x:ConnectionId='5' Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True">
+                <StackPanel x:ConnectionId='5' x:Name="AnimatedContainer" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
+                    <StackPanel.RenderTransform>
+                        <TranslateTransform x:ConnectionId='8' x:Name="SlideTransform"/>
+                    </StackPanel.RenderTransform>
+                    <RichEditBox x:ConnectionId='9' Name="CorrectedUserDisplay" Margin="10,10,10,0" Padding="10" Foreground="White" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" FontSize="18"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/edit-2.png" MaxWidth="16" MaxHeight="16" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0"/>
 
-                        </RichEditBox>
+                        <TextBlock Text="Corrected input" FontSize="16" FontFamily="Segoe UI Variable" Foreground="#505050" Margin="10,0"/>
 
 
-                        <RichEditBox x:ConnectionId='6' Name="InputBox"
+                    </StackPanel>
+                </StackPanel>
+
+
+                <RichEditBox x:ConnectionId='6' Name="InputBox"
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"

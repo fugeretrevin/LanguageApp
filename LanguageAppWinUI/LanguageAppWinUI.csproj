@@ -13,6 +13,55 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="Assets\BadgeLogo.scale-100.png" />
+    <Content Remove="Assets\BadgeLogo.scale-125.png" />
+    <Content Remove="Assets\BadgeLogo.scale-150.png" />
+    <Content Remove="Assets\BadgeLogo.scale-200.png" />
+    <Content Remove="Assets\BadgeLogo.scale-400.png" />
+    <Content Remove="Assets\LargeTile.scale-100.png" />
+    <Content Remove="Assets\LargeTile.scale-125.png" />
+    <Content Remove="Assets\LargeTile.scale-150.png" />
+    <Content Remove="Assets\LargeTile.scale-200.png" />
+    <Content Remove="Assets\LargeTile.scale-400.png" />
+    <Content Remove="Assets\logo.altform-lightunplated_targetsize-16.png" />
+    <Content Remove="Assets\logo.altform-lightunplated_targetsize-24.png" />
+    <Content Remove="Assets\logo.altform-lightunplated_targetsize-256.png" />
+    <Content Remove="Assets\logo.altform-lightunplated_targetsize-32.png" />
+    <Content Remove="Assets\logo.altform-lightunplated_targetsize-48.png" />
+    <Content Remove="Assets\logo.altform-unplated_targetsize-16.png" />
+    <Content Remove="Assets\logo.altform-unplated_targetsize-24.png" />
+    <Content Remove="Assets\logo.altform-unplated_targetsize-256.png" />
+    <Content Remove="Assets\logo.altform-unplated_targetsize-32.png" />
+    <Content Remove="Assets\logo.altform-unplated_targetsize-48.png" />
+    <Content Remove="Assets\logo.scale-100.png" />
+    <Content Remove="Assets\logo.scale-125.png" />
+    <Content Remove="Assets\logo.scale-150.png" />
+    <Content Remove="Assets\logo.scale-200.png" />
+    <Content Remove="Assets\logo.scale-400.png" />
+    <Content Remove="Assets\logo.targetsize-16.png" />
+    <Content Remove="Assets\logo.targetsize-24.png" />
+    <Content Remove="Assets\logo.targetsize-256.png" />
+    <Content Remove="Assets\logo.targetsize-32.png" />
+    <Content Remove="Assets\logo.targetsize-48.png" />
+    <Content Remove="Assets\SmallTile.scale-100.png" />
+    <Content Remove="Assets\SmallTile.scale-125.png" />
+    <Content Remove="Assets\SmallTile.scale-150.png" />
+    <Content Remove="Assets\SmallTile.scale-200.png" />
+    <Content Remove="Assets\SmallTile.scale-400.png" />
+    <Content Remove="Assets\SplashScreen.scale-100.png" />
+    <Content Remove="Assets\SplashScreen.scale-125.png" />
+    <Content Remove="Assets\SplashScreen.scale-150.png" />
+    <Content Remove="Assets\SplashScreen.scale-400.png" />
+    <Content Remove="Assets\Square150x150Logo.scale-100.png" />
+    <Content Remove="Assets\Square150x150Logo.scale-125.png" />
+    <Content Remove="Assets\Square150x150Logo.scale-150.png" />
+    <Content Remove="Assets\Square150x150Logo.scale-400.png" />
+    <Content Remove="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Remove="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Remove="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Remove="Assets\Wide310x150Logo.scale-400.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="images\airport.png" />
     <None Remove="images\back.png" />
     <None Remove="images\bakery.png" />
@@ -34,6 +83,7 @@
     <None Remove="images\home.png" />
     <None Remove="images\home.svg" />
     <None Remove="images\hotel.png" />
+    <None Remove="images\logoWithText.png" />
     <None Remove="images\menu.png" />
     <None Remove="images\noun-cards-165724.png" />
     <None Remove="images\noun-cards-165724.svg" />
@@ -63,6 +113,9 @@
     <Content Include="images\flashcards.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\logoWithText.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\menu.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -77,7 +130,6 @@
     <Content Include="Assets\Square150x150Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="images\airport.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -148,6 +200,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Update="Assets\flashcards.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\logoWithText.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Assets\tips.json">

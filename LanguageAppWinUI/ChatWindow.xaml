@@ -25,13 +25,13 @@
 
                 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="80"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal">
-                        <Button Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100" Click="GoHome">
-                            <Image Source="/images/back.png" Height="30" Width="30"/>
+                    <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,4" BorderBrush="#191919">
+                <Button Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100" Click="GoHome" IsTabStop="False">
+                            <Image Source="/images/back.png" Height="25" Width="25"/>
                         </Button>
                         <TextBlock x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
                     </StackPanel>
@@ -46,25 +46,29 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <ScrollViewer Background="#FF2B2B2B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1">
+                        <ScrollViewer x:Name="ChatScrollViewer"  Background="#FF29292B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1" CornerRadius="16">
+                        <StackPanel x:Name="ChatStackPanel" Orientation="Vertical" Margin="10"/>
+                    <!-- Chat messages will be added here dynamically -->
 
-                            <RichTextBlock Name="ChatDisplay" Foreground="White" FontFamily="Segoe UI Variable">
-
-                            </RichTextBlock>
 
                         </ScrollViewer>
 
-                        <RichTextBlock Name="AiFeedbackDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="2" FontFamily="Segoe UI Variable">
-                            <Paragraph>
-                                <Run Text="Feedback area"></Run>
-                            </Paragraph>
-                        </RichTextBlock>
-                        <RichEditBox Name="CorrectedUserDisplay" Margin="10" Padding="10" Foreground="White" Grid.Row="0" Grid.Column="0" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True">
+                <StackPanel x:Name="AnimatedContainer" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
+                    <StackPanel.RenderTransform>
+                        <TranslateTransform x:Name="SlideTransform"/>
+                    </StackPanel.RenderTransform>
+                    <RichEditBox Name="CorrectedUserDisplay" Margin="10,10,10,0" Padding="10" Foreground="White" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" FontSize="18"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/edit-2.png" MaxWidth="16" MaxHeight="16" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0"/>
 
-                        </RichEditBox>
+                        <TextBlock Text="Corrected input" FontSize="16" FontFamily="Segoe UI Variable" Foreground="#505050" Margin="10,0"/>
 
 
-                        <RichEditBox Name="InputBox"
+                    </StackPanel>
+                </StackPanel>
+
+
+                <RichEditBox Name="InputBox"
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"

@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.UI;
+using Microsoft.UI.Text;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -109,6 +110,8 @@ namespace LanguageAppWinUI
         {
             int start = scenario.IndexOf('(') + 1;
             int end = scenario.IndexOf(')');
+            if (start == -1 || end == -1 || end <= start) return;
+
             string imageName = scenario.Substring(start, end - start);
             string imageSource = $"ms-appx:///images/{imageName}.png";
             MostRecentScenarioImage.Source = new BitmapImage(new Uri(imageSource));
@@ -161,15 +164,27 @@ namespace LanguageAppWinUI
             if (btnTag == "FlashcardsPage")
             {
                 flashcardPacks = await LoadFlashcardPacksAsync();
+                if (flashcardPacks == null || flashcardPacks.Count == 0)
+                {
+                    FlashcardText.Text = "No flashcards available.";
+                    FlashcardPackTitleText.Text = "";
+                    return;
+                }
                 selectedPack = flashcardPacks[flashcardSelection];
                 cards = selectedPack.Cards;
                 currentCardIndex = 0;
                 currentCard = cards[currentCardIndex];
-                FlashcardText.Text = currentCard.Phrase;
                 string phrase = currentCard.Phrase;
                 string translation = currentCard.Translation;
 
                 FlashcardPacksMenuFlyout.Items.Clear();
+
+                if (flashcardPacks == null || flashcardPacks.Count == 0)
+                {
+                    var item = new MenuFlyoutItem { Text = "No flashcard packs available" };
+                    FlashcardPacksMenuFlyout.Items.Add(item);
+                    return;
+                }
 
                 foreach (var pack in flashcardPacks)
                 {
@@ -260,7 +275,11 @@ namespace LanguageAppWinUI
             }
 
             flashcardPacks = await LoadFlashcardPacksAsync();
-
+            if (flashcardPacks.Count == 0)
+            {
+                RecommendedFlashcardsText.Text = "No flashcards available.";
+                return;
+            }
             Random rand = new Random();
             flashcardSelection = rand.Next(0, flashcardPacks.Count);
             RecommendedFlashcardsText.Text = flashcardPacks[flashcardSelection].Title;
@@ -366,10 +385,21 @@ namespace LanguageAppWinUI
 
 
         }
+        // If no mistake file exists, make one
         private async void UpdateMistakes()
         {
             int counter = 0;
             MistakesText.Blocks.Clear();
+
+            var item = await ApplicationData.Current.LocalFolder.TryGetItemAsync("mistakes.json");
+
+            // If not, create an empty one
+            if (item == null)
+            {
+                StorageFile newFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("mistakes.json");
+                await FileIO.WriteTextAsync(newFile, "[]"); // empty JSON array
+            }
+            // If it exists, read the mistakes from it
 
             StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("mistakes.json");
 
@@ -380,17 +410,32 @@ namespace LanguageAppWinUI
 
             paragraph.Inlines.Add(new Run { Text = "\n" });
             MistakesText.Blocks.Add(paragraph);
+
+            if (mistakeSentences == null || mistakeSentences.Count == 0)
+            {
+                paragraph = new Paragraph();
+                paragraph.Inlines.Add(new Run { Text = "No mistakes found yet!" });
+                MistakesText.Blocks.Add(paragraph);
+                return;
+            }
             for (int i = mistakeSentences.Count - 1; i >= 0; i--)
             {
                 var mistakeSentence = mistakeSentences[i];
                 paragraph = new Paragraph();
 
-              
+
+                Run beginningString = new Run
+                {
+                    Text = "Sentence:\n",
+                    FontWeight = FontWeights.Bold
+
+                };
+                paragraph.Inlines.Add(beginningString);
 
 
                 Run sentence = new Run
                 {
-                    Text = $"Sentence: {mistakeSentence.Sentence}\n",
+                    Text = $"{mistakeSentence.Sentence}\n\nMistakes:\n",
                 };
                 paragraph.Inlines.Add(sentence);
                 
@@ -398,18 +443,28 @@ namespace LanguageAppWinUI
                 {
                     Run mistake = new Run
                     {
-                        Text = $"Mistake: {mis.Incorrect}\n"
+                        Text = $"    - {mis.Incorrect}",
+                        Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, 233, 116, 81))
+
+                    };
+                    Run middle = new Run
+                    {
+                        Text = $" | ",
+                        Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, 255, 255, 255))
+
                     };
                     Run corrected = new Run
                     {
-                        Text = $"Correction: {mis.Corrected}\n",
+                        Text = $"{mis.Corrected}\n",
                         Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(0xFF, 34, 139, 34))
                     };
                     paragraph.Inlines.Add(mistake);
+                    paragraph.Inlines.Add(middle);
 
                     paragraph.Inlines.Add(corrected);
 
                 }
+                paragraph.Inlines.Add(new Run { Text = "\n———————————————————————————————\n" });
                 MistakesText.Blocks.Add(paragraph);
                 counter++;
                 if (counter > 30)
@@ -422,17 +477,35 @@ namespace LanguageAppWinUI
         public async Task<List<FlashcardPack>> LoadFlashcardPacksAsync()
         {
 
-            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/flashcards.json")); 
-            string json = await FileIO.ReadTextAsync(file);
-            return JsonSerializer.Deserialize<List<FlashcardPack>>(json);
+            try
+            {
+                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/flashcards.json"));
+                string json = await FileIO.ReadTextAsync(file);
+                return JsonSerializer.Deserialize<List<FlashcardPack>>(json);
+            }
+            catch (Exception ex)
+            {
+                // Optionally log the error
+                return new List<FlashcardPack>();
+            }
         }
 
         public async Task<List<Tip>> LoadTips()
-        {
+        {   
 
-            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/tips.json"));
-            string json = await FileIO.ReadTextAsync(file);
-            return JsonSerializer.Deserialize<List<Tip>>(json);
+            try
+            {
+                StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/tips.json"));
+                string json = await FileIO.ReadTextAsync(file);
+                return JsonSerializer.Deserialize<List<Tip>>(json);
+            }
+            catch (Exception ex)
+            {
+                // Optionally log the error
+                return new List<Tip>();
+            }
+
+
         }
     }
     public class Flashcard

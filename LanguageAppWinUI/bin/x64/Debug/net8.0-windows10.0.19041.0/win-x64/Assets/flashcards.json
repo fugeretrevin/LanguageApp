@@ -2,24 +2,288 @@
   {
     "Title": "Common Greetings",
     "Cards": [
-      { "Phrase": "Bonjour!", "Translation": "Good morning!" },
-      { "Phrase": "Salut!", "Translation": "Hey!" },
-      { "Phrase": "Bonsoir", "Translation": "Good evening" },
-      { "Phrase": "Comment ca va?", "Translation": "How is it going?" }
+        {
+            "Phrase": "Bonjour!",
+            "Translation": "Hello"
+        },
+        {
+            "Phrase": "Salut",
+            "Translation": "Hi"
+        },
+        {
+            "Phrase": "Bonsoir",
+            "Translation": "Good evening"
+        },
+        {
+            "Phrase": "Comment ca va?",
+            "Translation": "How is it going?"
+        },
+        {
+            "Phrase": "Bon matin",
+            "Translation": "Good morning"
+        },
+        {
+            "Phrase": "Bon après-midi",
+            "Translation": "Good afternoon"
+        },
+        {
+            "Phrase": "Coucou",
+            "Translation": "Hey"
+        },
+        {
+            "Phrase": "Bonsoir",
+            "Translation": "Good evening"
+        },
+        {
+            "Phrase": "Rebonjour",
+            "Translation": "Hello again"
+        },
+        {
+            "Phrase": "Enchanté(e)",
+            "Translation": "It's a pleasure; nice to meet you"
+        },
+        {
+            "Phrase": "Bienvenue",
+            "Translation": "Welcome"
+        },
+        {
+            "Phrase": "Comment allez-vous",
+            "Translation": "How are you (all)"
+        }
+        
 
     ]
   },
-  {
-    "Title": "Action Verbs",
-    "Cards": [
-      { "Phrase": "etre", "Translation": "to be" },
-      { "Phrase": "avoir", "Translation": "to have" },
-      { "Phrase": "faire", "Translation": "to do" },
-      { "Phrase": "aller", "Translation": "to go" },
-      { "Phrase": "parler", "Translation": "to speak" },
-      { "Phrase": "vouloir", "Translation": "to want" }
+    {
+        "Title": "Action Verbs",
+        "Cards": [
+            {
+                "Phrase": "etre",
+                "Translation": "to be"
+            },
+            {
+                "Phrase": "avoir",
+                "Translation": "to have"
+            },
+            {
+                "Phrase": "faire",
+                "Translation": "to do"
+            },
+            {
+                "Phrase": "aller",
+                "Translation": "to go"
+            },
+            {
+                "Phrase": "parler",
+                "Translation": "to speak"
+            },
+            {
+                "Phrase": "vouloir",
+                "Translation": "to want"
+            },
+            {
+                "Phrase": "dire",
+                "Translation": "to say"
+            },
+            {
+                "Phrase": "savoir",
+                "Translation": "to know"
+            },
+            {
+                "Phrase": "penser",
+                "Translation": "to think"
+            },
+            {
+                "Phrase": "travailler",
+                "Translation": "to work"
+            },
+            {
+                "Phrase": "appeler",
+                "Translation": "to call"
+            },
+            {
+                "Phrase": "essayer",
+                "Translation": "to try"
+            },
+            {
+                "Phrase": "demander",
+                "Translation": "to ask"
+            },
+            {
+                "Phrase": "venir",
+                "Translation": "to come"
+            },
+            {
+                "Phrase": "vouloir",
+                "Translation": "to want"
+            },
+            {
+                "Phrase": "souhaiter",
+                "Translation": "to wish"
+            },
+            {
+                "Phrase": "regarder",
+                "Translation": "to look (at)"
+            },
+            {
+                "Phrase": "utiliser",
+                "Translation": "to use"
+            },
+            {
+                "Phrase": "trouver",
+                "Translation": "to find"
+            },
+            {
+                "Phrase": "donner",
+                "Translation": "to give"
+            },
+            {
+                "Phrase": "sentir",
+                "Translation": "to feel"
+            },
+            {
+                "Phrase": "devenir",
+                "Translation": "to become"
+            },
+            {
+                "Phrase": "partir",
+                "Translation": "to leave"
+            },
+            {
+                "Phrase": "mettre",
+                "Translation": "to put"
+            },
+            {
+                "Phrase": "jouer",
+                "Translation": "to play"
+            },
+            {
+                "Phrase": "courir",
+                "Translation": "to run"
+            },
+            {
+                "Phrase": "commencer",
+                "Translation": "to begin"
+            }
 
 
-    ]
-  }
+
+
+        ]
+
+    },
+    {
+        "Title": "Shopping & Money",
+        "Cards": [
+            {
+                "Phrase": "Combien ça coûte ?",
+                "Translation": "How much does it cost?"
+            },
+            {
+                "Phrase": "C’est trop cher",
+                "Translation": "That’s too expensive"
+            },
+            {
+                "Phrase": "Je voudrais acheter ceci",
+                "Translation": "I would like to buy this"
+            },
+            {
+                "Phrase": "Avez-vous une taille plus grande ?",
+                "Translation": "Do you have a bigger size?"
+            },
+            {
+                "Phrase": "C’est en solde ?",
+                "Translation": "Is this on sale?"
+            },
+            {
+                "Phrase": "Je paie en espèces",
+                "Translation": "I’m paying in cash"
+            },
+            {
+                "Phrase": "Je cherche un cadeau",
+                "Translation": "I’m looking for a gift"
+            },
+            {
+                "Phrase": "Puis-je avoir un reçu ?",
+                "Translation": "Can I get a receipt?"
+            }
+        ]
+    },
+    {
+        "Title": "Basic Conversation",
+        "Cards": [
+            {
+                "Phrase": "Comment tu t’appelles ?",
+                "Translation": "What’s your name?"
+            },
+            {
+                "Phrase": "Je m’appelle...",
+                "Translation": "My name is..."
+            },
+            {
+                "Phrase": "D’où viens-tu ?",
+                "Translation": "Where are you from?"
+            },
+            {
+                "Phrase": "Je viens des États-Unis",
+                "Translation": "I’m from the U.S."
+            },
+            {
+                "Phrase": "Quel âge as-tu ?",
+                "Translation": "How old are you?"
+            },
+            {
+                "Phrase": "J’ai vingt ans",
+                "Translation": "I am 20 years old"
+            },
+            {
+                "Phrase": "Tu parles anglais ?",
+                "Translation": "Do you speak English?"
+            },
+            {
+                "Phrase": "Un peu",
+                "Translation": "A little"
+            }
+        ]
+    },
+    {
+        "Title": "Food & Dining",
+        "Cards": [
+            {
+                "Phrase": "Je voudrais une table pour deux",
+                "Translation": "I’d like a table for two"
+            },
+            {
+                "Phrase": "Le menu, s’il vous plaît",
+                "Translation": "The menu, please"
+            },
+            {
+                "Phrase": "Qu’est-ce que vous recommandez ?",
+                "Translation": "What do you recommend?"
+            },
+            {
+                "Phrase": "Je suis végétarien(ne)",
+                "Translation": "I am vegetarian"
+            },
+            {
+                "Phrase": "L’addition, s’il vous plaît",
+                "Translation": "The check, please"
+            },
+            {
+                "Phrase": "C’était délicieux",
+                "Translation": "That was delicious"
+            },
+            {
+                "Phrase": "Je suis allergique aux arachides",
+                "Translation": "I’m allergic to peanuts"
+            },
+            {
+                "Phrase": "Puis-je avoir de l’eau ?",
+                "Translation": "Can I have some water?"
+            }
+        ]
+    }
+
+
+
 ]

@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-07-27T20:50:26.592</Modified>
+      <Modified>2025-07-27T22:28:56.562</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,7 +43,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.dll">
       <PackagePath>LanguageAppWinUI.dll</PackagePath>
-      <Modified>2025-07-27T20:50:25.910</Modified>
+      <Modified>2025-07-27T22:28:55.672</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\background.png">
       <PackagePath>Assets\background.png</PackagePath>
@@ -51,11 +51,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
-      <Modified>2025-07-27T20:50:25.925</Modified>
+      <Modified>2025-07-27T22:28:55.763</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\flashcards.json">
       <PackagePath>Assets\flashcards.json</PackagePath>
-      <Modified>2025-07-21T22:45:07.071</Modified>
+      <Modified>2025-07-27T22:28:36.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logo.png">
       <PackagePath>Assets\logo.png</PackagePath>

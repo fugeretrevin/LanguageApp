@@ -59,6 +59,7 @@ namespace LanguageAppWinUI
             stats = StatsManager.LoadStats();
             StartTimeLogger();
             _originalContent = this.Content;
+            UpdateHomePage();
 
 
 

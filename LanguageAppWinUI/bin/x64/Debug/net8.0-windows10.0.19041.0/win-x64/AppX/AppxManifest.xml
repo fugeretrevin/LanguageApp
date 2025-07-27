@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="fb631a49-30d1-43aa-bdda-89e2964dcc4e" Publisher="CN=stoof" Version="1.0.0.0" ProcessorArchitecture="x64" />
+  <Identity Name="fb631a49-30d1-43aa-bdda-89e2964dcc4e" Publisher="CN=Stoofman" Version="1.0.0.0" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="fb631a49-30d1-43aa-bdda-89e2964dcc4e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>LexAI</DisplayName>

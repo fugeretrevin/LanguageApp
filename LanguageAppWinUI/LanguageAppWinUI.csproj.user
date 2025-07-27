@@ -9,6 +9,10 @@
     <LargeTileSource>C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logo.altform-lightunplated_targetsize-256.png</LargeTileSource>
     <BadgeLogoSource>C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logo.altform-lightunplated_targetsize-256.png</BadgeLogoSource>
     <PackageLogoSource>C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logo.altform-lightunplated_targetsize-256.png</PackageLogoSource>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
   </PropertyGroup>
   <ItemGroup>
     <None Update="App.xaml">

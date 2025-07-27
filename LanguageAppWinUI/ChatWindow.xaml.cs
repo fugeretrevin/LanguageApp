@@ -39,9 +39,7 @@ using Windows.Storage;
 
 namespace LanguageAppWinUI
 {
-    /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    
 
     public sealed partial class ChatWindow : Page
     {
@@ -53,6 +51,7 @@ namespace LanguageAppWinUI
             this.InitializeComponent();
             LoadingVideo.Visibility = Visibility.Visible;
             LoadingVideo.MediaPlayer.Play();
+            LoadingVideo.MediaPlayer.IsLoopingEnabled = true;
             MainChatContent.Visibility = Visibility.Collapsed;
             _returnCallback = returnCallback;
             _scenario = scenario;
@@ -65,13 +64,7 @@ namespace LanguageAppWinUI
         {
 
 
-            // Set the source and play
-
-
-            // Set to MediaPlayerElement
-
-
-            // Start playback
+           
            
             InputBox.IsEnabled = false;
             AnimatedContainer.Visibility = Visibility.Collapsed;
@@ -146,7 +139,7 @@ namespace LanguageAppWinUI
                     AddChatBubble(userInput, true);
                     DispatcherQueue.TryEnqueue(async () =>
                     {
-                        await Task.Delay(50); // Let layout update
+                        await Task.Delay(50); 
                         ChatScrollViewer.ChangeView(null, ChatScrollViewer.ScrollableHeight, null, false);
                     });
 
@@ -361,26 +354,7 @@ namespace LanguageAppWinUI
             await FileIO.WriteTextAsync(file, updatedJson);
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-            {
-
-            }
-
-            private void Form2_Load(object sender, EventArgs e)
-            {
-
-            }
-
-            private void richTextBox2_TextChanged(object sender, EventArgs e)
-            {
-
-            }
-
-            private void richTextBox3_TextChanged(object sender, EventArgs e)
-            {
-
-            }
-
+        
 
         private void GoHome(object sender, RoutedEventArgs e)
         {
@@ -398,8 +372,8 @@ namespace LanguageAppWinUI
                 Padding = new Thickness(10),
                 MaxWidth = 400,
                 HorizontalAlignment = isUser ? HorizontalAlignment.Right : HorizontalAlignment.Left,
-                Opacity = 0, // Start invisible
-                RenderTransform = new TranslateTransform { X = isUser ? 50 : -50 } // Slide in
+                Opacity = 0, 
+                RenderTransform = new TranslateTransform { X = isUser ? 50 : -50 }
 
             };
 
@@ -415,7 +389,6 @@ namespace LanguageAppWinUI
             bubble.Child = text;
             ChatStackPanel.Children.Add(bubble);
 
-            // Scroll to bottom
             DispatcherQueue.TryEnqueue(() =>
             {
                 ChatScrollViewer.ChangeView(null, ChatScrollViewer.ScrollableHeight, null, false);
@@ -429,7 +402,7 @@ namespace LanguageAppWinUI
         {
             var slideIn = new DoubleAnimation
             {
-                From = 300, // start offset (px)
+                From = 300,
                 To = 0,
                 Duration = new Duration(TimeSpan.FromMilliseconds(400)),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut }
@@ -451,7 +424,7 @@ namespace LanguageAppWinUI
             var slideOut = new DoubleAnimation
             {
                 From = 0,
-                To = 300, // slide right
+                To = 300,
                 Duration = new Duration(TimeSpan.FromMilliseconds(300)),
                 EasingFunction = new CubicEase { EasingMode = EasingMode.EaseIn }
             };
@@ -474,7 +447,6 @@ namespace LanguageAppWinUI
         {
             var storyboard = new Storyboard();
 
-            // Fade-in animation
             var fade = new DoubleAnimation
             {
                 From = 0,
@@ -484,7 +456,6 @@ namespace LanguageAppWinUI
             Storyboard.SetTarget(fade, bubble);
             Storyboard.SetTargetProperty(fade, "Opacity");
 
-            // Slide animation
             var slide = new DoubleAnimation
             {
                 From = ((TranslateTransform)bubble.RenderTransform).X,

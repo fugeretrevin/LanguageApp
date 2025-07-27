@@ -99,7 +99,7 @@
 
 
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Bakery. (bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="At the Bakery. (bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0" Click="Button_Click">
                    
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/bakery.png" Height="100" Width="100"/>
@@ -107,7 +107,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Ordering at a Restaurant. (restaurant) You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="Ordering at a Restaurant. (restaurant) You are a waiter at a restaurant" Grid.Row="0" Grid.Column="1" Click="Button_Click">
                     
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Image Source="/images/restaurant.png" Height="100" Width="100"/>
@@ -115,7 +115,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Checking in to a Hotel. (hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="Checking in to a Hotel. (hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2" Click="Button_Click">
                     
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/hotel.png" Height="100" Width="100"/>
@@ -123,7 +123,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Grocery Store. (grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="At the Grocery Store. (grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0" Click="Button_Click">
                     
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/grocery.png" Height="100" Width="100"/>
@@ -131,7 +131,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Airport. (airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="At the Airport. (airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1" Click="Button_Click">
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                             <Image Source="/images/airport.png" Height="100" Width="100"/>
@@ -140,7 +140,7 @@
                 </Button>
 
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Asking for Directions. (directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="Asking for Directions. (directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2" Click="Button_Click">
                     
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
@@ -150,7 +150,7 @@
                 </Button>
 
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Seeing a Doctor. (doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="Seeing a Doctor. (doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0" Click="Button_Click">
                     
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/doctor.png" Height="100" Width="100"/>
@@ -158,7 +158,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Park. (park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="At the Park. (park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1" Click="Button_Click">
                     
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/park.png" Height="100" Width="100"/>
@@ -166,7 +166,7 @@
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At a University. (university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2" Click="Button_Click">
+                <Button Style="{StaticResource ScenarioButton}"   Tag="At a University. (university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2" Click="Button_Click">
                     
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/university.png" Height="100" Width="100"/>

@@ -23,9 +23,7 @@
                 <Setter Property="Padding" Value="10"/>
                 <Setter Property="FontFamily" Value="Segoe UI Variable"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
-                <Setter Property="Background" Value="{StaticResource ScenarioBackgroundBrush}"/>
 
-                <Setter Property="BorderBrush" Value="#0c2d48"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -34,21 +32,18 @@
                                     <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1" />
                                 </Grid.RenderTransform>
 
-                                <!-- Background -->
                                 <Border x:Name="ButtonBorder"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="8"
                             Padding="{TemplateBinding Padding}">
-                                    <!-- 🧠 This supports any layout: text, image, StackPanel, etc -->
                                     <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           Content="{TemplateBinding Content}"
                                           ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 </Border>
 
-                                <!-- Hover, Pressed Visual States -->
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal" >
@@ -108,21 +103,17 @@
                                     <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1" />
                                 </Grid.RenderTransform>
 
-                                <!-- Background -->
                                 <Border x:Name="ButtonBorder"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="8"
                 Padding="{TemplateBinding Padding}">
-                                    <!-- 🧠 This supports any layout: text, image, StackPanel, etc -->
                                     <ContentPresenter HorizontalAlignment="Center"
                               VerticalAlignment="Center"
                               Content="{TemplateBinding Content}"
                               ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 </Border>
-
-                                <!-- Hover, Pressed Visual States -->
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal" >
@@ -242,21 +233,18 @@
                                     <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1" />
                                 </Grid.RenderTransform>
 
-                                <!-- Background -->
                                 <Border x:Name="ButtonBorder"
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     CornerRadius="32"
                                     Padding="{TemplateBinding Padding}">    
-                                    <!-- 🧠 This supports any layout: text, image, StackPanel, etc -->
                                     <ContentPresenter HorizontalAlignment="Center"
                               VerticalAlignment="Center"
                               Content="{TemplateBinding Content}"
                               ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 </Border>
 
-                                <!-- Hover, Pressed Visual States -->
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal" >
@@ -318,21 +306,18 @@
                                     <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1" />
                                 </Grid.RenderTransform>
 
-                                <!-- Background -->
                                 <Border x:Name="ButtonBorder"
                          Background="{TemplateBinding Background}"
                          BorderBrush="{TemplateBinding BorderBrush}"
                          BorderThickness="{TemplateBinding BorderThickness}"
                          CornerRadius="32"
                          Padding="{TemplateBinding Padding}">
-                                    <!-- 🧠 This supports any layout: text, image, StackPanel, etc -->
                                     <ContentPresenter HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Content="{TemplateBinding Content}"
                    ContentTemplate="{TemplateBinding ContentTemplate}" />
                                 </Border>
 
-                                <!-- Hover, Pressed Visual States -->
                                 <VisualStateManager.VisualStateGroups>
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal" >

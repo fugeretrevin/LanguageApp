@@ -16,7 +16,7 @@
                 <MediaPlayerElement x:ConnectionId='2' x:Name="LoadingVideo"
             AutoPlay="False"
             AreTransportControlsEnabled="False"
-            Visibility="Collapsed"
+            Visibility="Collapsed" 
             
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -29,12 +29,22 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,4" BorderBrush="#191919">
-                <Button x:ConnectionId='12' Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100"                IsTabStop="False">
-                            <Image Source="/images/back.png" Height="25" Width="25"/>
-                        </Button>
-                        <TextBlock x:ConnectionId='13' x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
-                    </StackPanel>
+            <Grid BorderThickness="0,0,0,4" BorderBrush="#191919">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+
+                </Grid.ColumnDefinitions>
+
+                <Button x:ConnectionId='12' Grid.Column="0" Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100"                IsTabStop="False">
+                    <Image Source="/images/back.png" Height="25" Width="25"/>
+                </Button>
+                <TextBlock x:ConnectionId='13' Grid.Column="1" x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
+                <TextBlock Grid.Column="2" Width="100"/>
+
+            </Grid>
+           
                     <Grid x:ConnectionId='4' x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10" Grid.Row="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*" />
@@ -48,7 +58,6 @@
 
                         <ScrollViewer x:ConnectionId='5' x:Name="ChatScrollViewer"  Background="#FF29292B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1" CornerRadius="16">
                         <StackPanel x:ConnectionId='11' x:Name="ChatStackPanel" Orientation="Vertical" Margin="10"/>
-                    <!-- Chat messages will be added here dynamically -->
 
 
                         </ScrollViewer>
@@ -57,7 +66,7 @@
                     <StackPanel.RenderTransform>
                         <TranslateTransform x:ConnectionId='9' x:Name="SlideTransform"/>
                     </StackPanel.RenderTransform>
-                    <RichEditBox x:ConnectionId='10' Name="CorrectedUserDisplay" Margin="10,10,10,0" Padding="10" Foreground="White" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" FontSize="18"/>
+                    <RichEditBox x:ConnectionId='10' Name="CorrectedUserDisplay" Margin="10,10,10,0" Padding="10" Foreground="White" FontFamily="Segoe UI Variable" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" FontSize="18"/>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/images/edit-2.png" MaxWidth="16" MaxHeight="16" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0"/>
 
@@ -72,6 +81,7 @@
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"
+                ToolTipService.ToolTip="Press Enter to send your message"
                 BorderThickness="1"
                
                                           

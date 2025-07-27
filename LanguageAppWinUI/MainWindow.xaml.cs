@@ -33,7 +33,6 @@ namespace LanguageAppWinUI
     /// </summary>
     public sealed partial class MainWindow : Window
     {
-        public static Frame AppFrame { get; private set; }
 
         private Window _chatWindow;
         List<FlashcardPack> flashcardPacks;
@@ -321,14 +320,18 @@ namespace LanguageAppWinUI
             {
                 if (child is Button x)
                 {
-                    x.Background = new SolidColorBrush(default); // Or default
+                    x.Background = new SolidColorBrush(default); 
                 }
             }
-            selectedButton.Background = new SolidColorBrush(Color.FromArgb(255, 0x20, 0x20, 0x20)); // Example selected color
+            selectedButton.Background = new SolidColorBrush(Color.FromArgb(255, 0x20, 0x20, 0x20)); 
 
         }
         private void FlashcardRight(object sender, RoutedEventArgs e)
         {
+            if (currentCard == null || selectedPack == null || cards == null || cards.Count == 0)
+            {
+                return;
+            }
             currentCardIndex++;
             if (currentCardIndex >= cards.Count)
             {
@@ -346,6 +349,10 @@ namespace LanguageAppWinUI
         }
         private void FlashcardLeft(object sender, RoutedEventArgs e)
         {
+            if (currentCard == null || selectedPack == null || cards == null || cards.Count == 0)
+            {
+                return;
+            }
             currentCardIndex--;
             if (currentCardIndex < 0)
             {
@@ -387,7 +394,6 @@ namespace LanguageAppWinUI
 
 
         }
-        // If no mistake file exists, make one
         private async void UpdateMistakes()
         {
             int counter = 0;
@@ -395,13 +401,11 @@ namespace LanguageAppWinUI
 
             var item = await ApplicationData.Current.LocalFolder.TryGetItemAsync("mistakes.json");
 
-            // If not, create an empty one
             if (item == null)
             {
                 StorageFile newFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("mistakes.json");
-                await FileIO.WriteTextAsync(newFile, "[]"); // empty JSON array
+                await FileIO.WriteTextAsync(newFile, "[]");
             }
-            // If it exists, read the mistakes from it
 
             StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("mistakes.json");
 
@@ -487,7 +491,7 @@ namespace LanguageAppWinUI
             }
             catch (Exception ex)
             {
-                // Optionally log the error
+                System.Diagnostics.Debug.WriteLine($"Failed to load flashcards: {ex.Message}");
                 return new List<FlashcardPack>();
             }
         }
@@ -503,7 +507,7 @@ namespace LanguageAppWinUI
             }
             catch (Exception ex)
             {
-                // Optionally log the error
+                System.Diagnostics.Debug.WriteLine($"Failed to load Tips: {ex.Message}");
                 return new List<Tip>();
             }
 
@@ -573,23 +577,42 @@ namespace LanguageAppWinUI
 
         public static UserStats LoadStats()
         {
-            if (!File.Exists(StatsFilePath))
+            try
             {
+                if (!File.Exists(StatsFilePath))
+                {
+                    _stats = new UserStats();
+                    SaveStats();
+                }
+                else
+                {
+                    string json = File.ReadAllText(StatsFilePath);
+                    _stats = JsonSerializer.Deserialize<UserStats>(json) ?? new UserStats();
+
+                }
+                return _stats;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Failed to load stats: {ex.Message}");
                 _stats = new UserStats();
                 SaveStats();
+                return _stats;
             }
-            else
-            {
-                string json = File.ReadAllText(StatsFilePath);
-                _stats = JsonSerializer.Deserialize<UserStats>(json) ?? new UserStats();
-
-            }
-            return _stats;
         }
         public static void SaveStats()
         {
-            string json = JsonSerializer.Serialize(_stats, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(StatsFilePath, json);
+            try
+            {
+
+
+                string json = JsonSerializer.Serialize(_stats, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(StatsFilePath, json);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Failed to save stats: {ex.Message}");
+            }
         }
         public static void LogMessageSent()
         {

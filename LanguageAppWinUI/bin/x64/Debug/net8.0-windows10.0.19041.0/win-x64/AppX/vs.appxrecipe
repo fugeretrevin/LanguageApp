@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x64</SolutionConfiguration>
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>fb631a49-30d1-43aa-bdda-89e2964dcc4e</PackageIdentityName>
-    <PackageIdentityPublisher>CN=stoof</PackageIdentityPublisher>
+    <PackageIdentityPublisher>CN=Stoofman</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,24 +18,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>393D96079CF8205C22E541D6EA445B7D5232D24A7D34A0EC03F0805BEB2C3055</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>fb631a49-30d1-43aa-bdda-89e2964dcc4e_1.0.0.0_x64__cs0hbdqmz4dp2</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>fb631a49-30d1-43aa-bdda-89e2964dcc4e_cs0hbdqmz4dp2!App</RegisteredUserModeAppID>
+    <RegisteredManifestChecksum>4A0E691F264FBFA5DBD9922252EA22B005F6113704D054286419344C3400AD0F</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>fb631a49-30d1-43aa-bdda-89e2964dcc4e_1.0.0.0_x64__1ace09jd0rj34</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>fb631a49-30d1-43aa-bdda-89e2964dcc4e_1ace09jd0rj34!App</RegisteredUserModeAppID>
     <RegisteredPackageID>fb631a49-30d1-43aa-bdda-89e2964dcc4e</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=stoof</RegisteredPackagePublisher>
+    <RegisteredPackagePublisher>CN=Stoofman</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-07-27T22:28:56.562</Modified>
+      <Modified>2025-07-27T23:32:28.944</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-07-27T20:50:26.212</Modified>
+      <Modified>2025-07-27T23:32:28.521</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.runtimeconfig.json">
       <PackagePath>LanguageAppWinUI.runtimeconfig.json</PackagePath>
@@ -43,7 +43,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.dll">
       <PackagePath>LanguageAppWinUI.dll</PackagePath>
-      <Modified>2025-07-27T22:28:55.672</Modified>
+      <Modified>2025-07-27T23:32:28.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\background.png">
       <PackagePath>Assets\background.png</PackagePath>
@@ -51,11 +51,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
-      <Modified>2025-07-27T22:28:55.763</Modified>
+      <Modified>2025-07-27T23:32:28.222</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\flashcards.json">
       <PackagePath>Assets\flashcards.json</PackagePath>
-      <Modified>2025-07-27T22:28:36.754</Modified>
+      <Modified>2025-07-27T22:35:56.758</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\logo.png">
       <PackagePath>Assets\logo.png</PackagePath>
@@ -67,7 +67,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\tips.json">
       <PackagePath>Assets\tips.json</PackagePath>
-      <Modified>2025-07-23T18:24:20.735</Modified>
+      <Modified>2025-07-27T22:35:56.703</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\videos\LoadingVideo.mp4">
       <PackagePath>Assets\videos\LoadingVideo.mp4</PackagePath>
@@ -1043,7 +1043,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.deps.json">
       <PackagePath>LanguageAppWinUI.deps.json</PackagePath>
-      <Modified>2025-07-27T20:50:26.117</Modified>
+      <Modified>2025-07-27T23:02:50.702</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

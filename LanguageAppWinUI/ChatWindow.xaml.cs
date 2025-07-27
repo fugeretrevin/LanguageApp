@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -50,13 +51,16 @@ namespace LanguageAppWinUI
         public ChatWindow(string scenario, Action returnCallback)
             {
             this.InitializeComponent();
+            LoadingVideo.Visibility = Visibility.Visible;
+            LoadingVideo.MediaPlayer.Play();
+            MainChatContent.Visibility = Visibility.Collapsed;
             _returnCallback = returnCallback;
             _scenario = scenario;
             SetScenario(scenario);
 
         }
 
-       
+
         private async void SetScenario(string scenario)
         {
 
@@ -68,6 +72,8 @@ namespace LanguageAppWinUI
 
 
             // Start playback
+           
+            InputBox.IsEnabled = false;
             AnimatedContainer.Visibility = Visibility.Collapsed;
             int end = scenario.IndexOf(".");
             string scenarioTitle = scenario.Substring(0, end);
@@ -76,13 +82,18 @@ namespace LanguageAppWinUI
             string aiResponse = await SendMessageAsync(scenario);
             aiResponse = aiResponse.Substring(0, aiResponse.IndexOf("Feedback:"));
             aiResponse = aiResponse.Trim();
-            AddChatBubble(aiResponse, false);
 
             int start = scenario.IndexOf('(') + 1;
             end = scenario.IndexOf(')');
             string imageName = scenario.Substring(start, end - start);
             string imageSource = $"ms-appx:///images/{imageName}.png";
             scenarioImage.Source = new BitmapImage(new Uri(imageSource));
+            InputBox.IsEnabled = true;
+            LoadingVideo.Visibility = Visibility.Collapsed;
+            MainChatContent.Visibility = Visibility.Visible;
+
+            AddChatBubble(aiResponse, false);
+
 
         }
 
@@ -143,17 +154,20 @@ namespace LanguageAppWinUI
                     string aiOutput = await SendMessageAsync(userInput);
                     string aiResponse = aiOutput.Substring(0, aiOutput.IndexOf("Feedback:"));
                     string aiFeedback = aiOutput.Substring(aiOutput.IndexOf("Feedback:"));
-                    string spellingFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Spelling:") - 2, aiFeedback.IndexOf(") Grammar") - 2);
+                    string spellingFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Spelling:") - 2, aiFeedback.IndexOf(") Grammar") - 12);
                     string grammarFeedback = aiFeedback.Substring(aiFeedback.IndexOf(") Grammar") - 2);
                     List<string> spellingMistakes = new();
                     List<string> grammarMistakes = new();
+                    Console.WriteLine(grammarFeedback);
+                    Debug.WriteLine(grammarFeedback);
+                    Debug.WriteLine(spellingFeedback);
                     if (!spellingFeedback.Contains("None"))
                     {
                         int spellingMistakeAmt = int.Parse(spellingFeedback.Substring(1, 1));
                         int currInd = spellingFeedback.IndexOf("Spelling:") + 10;
                         for (int i = 0; i < spellingMistakeAmt; i++)
                         {
-                            int nextCommaIndex = spellingFeedback.IndexOf(',', currInd);
+                            int nextCommaIndex = spellingFeedback.IndexOf('|', currInd);
                             if (nextCommaIndex != -1)
                             {
                                 int length = nextCommaIndex - currInd;
@@ -164,7 +178,7 @@ namespace LanguageAppWinUI
                             }
                             else
                             {
-                                nextCommaIndex = spellingFeedback.IndexOf('(', currInd);
+                                nextCommaIndex = spellingFeedback.Length;
                                 int length = nextCommaIndex - currInd;
                                 spellingMistakes.Add(spellingFeedback.Substring(currInd, length).Trim());
                             }
@@ -179,7 +193,7 @@ namespace LanguageAppWinUI
                         int currInd = grammarFeedback.IndexOf("Grammar:") + 8;
                         for (int i = 0; i < grammarMistakeAmt; i++)
                         {
-                            int nextCommaIndex = grammarFeedback.IndexOf(',', currInd);
+                            int nextCommaIndex = grammarFeedback.IndexOf('|', currInd);
                             if (nextCommaIndex != -1)
                             {
                                 int length = nextCommaIndex - currInd;
@@ -192,6 +206,7 @@ namespace LanguageAppWinUI
                             {
                                 nextCommaIndex = grammarFeedback.IndexOf('\n', currInd);
                                 int length = nextCommaIndex - currInd;
+                                Console.WriteLine(grammarFeedback.Substring(currInd, length).Trim());
                                 grammarMistakes.Add(grammarFeedback.Substring(currInd, length).Trim());
                             }
 
@@ -272,6 +287,8 @@ namespace LanguageAppWinUI
                             Mistake m = new Mistake();
                             m.Incorrect = x.Substring(0, x.IndexOf(" - ")).Trim();
                             m.Corrected = x.Substring(x.IndexOf(" - ") + 3).Trim();
+                            Console.WriteLine(m.Incorrect);
+                            Console.WriteLine(m.Corrected);
                             if((m.Incorrect.Trim() != m.Corrected.Trim()) && !m.Incorrect.Contains("User Grammar Mistake") && !m.Incorrect.Contains("User Misspelling"))
                             {
                                 sen.Mistakes.Add(m);

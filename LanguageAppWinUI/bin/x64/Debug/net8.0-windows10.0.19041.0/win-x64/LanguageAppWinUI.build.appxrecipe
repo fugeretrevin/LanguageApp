@@ -34,6 +34,9 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\LanguageAppWinUI.dll">
       <PackagePath>LanguageAppWinUI.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\background.png">
+      <PackagePath>Assets\background.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>LanguageAppWinUI.exe</PackagePath>
     </AppxPackagedFile>
@@ -49,8 +52,17 @@
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\tips.json">
       <PackagePath>Assets\tips.json</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\videos\LoadingVideo.mp4">
+      <PackagePath>Assets\videos\LoadingVideo.mp4</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\back.png">
       <PackagePath>images\back.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\background.jpg">
+      <PackagePath>images\background.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\background.png">
+      <PackagePath>images\background.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\images\chevronleft.png">
       <PackagePath>images\chevronleft.png</PackagePath>
@@ -804,9 +816,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\videos\loading.mp4">
-      <PackagePath>Assets\videos\loading.mp4</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\stoof\source\repos\LanguageAppWinUI\LanguageAppWinUI\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>

@@ -5,17 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LanguageAppWinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:composition="using:Microsoft.UI.Composition"
     mc:Ignorable="d"
     Title="LanguageAppWinUI">
-
+    
     <Window.SystemBackdrop>
         <MicaBackdrop />
     </Window.SystemBackdrop>
+   
+    <Frame x:ConnectionId='2' x:Name="MainFrame" Background="#202020">
 
-    <Frame x:ConnectionId='2' x:Name="MainFrame">
-
-        <Grid x:ConnectionId='3' x:Name="BaseLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:ConnectionId='3' x:Name="BaseLayout" Background="#202020">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="5*"/>
@@ -77,7 +77,7 @@
 
                 </Grid>
             </Border>
-            <Grid x:ConnectionId='4' Tag="PageContent"  x:Name="ScenariosPage"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="20" Grid.Column="1">
+            <Grid x:ConnectionId='4' Tag="PageContent"  x:Name="ScenariosPage"  Background="#202020" Margin="20" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -90,66 +90,84 @@
                     <ColumnDefinition Width="*" />
 
                 </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <ImageBrush x:Key="ScenarioBackgroundBrush"
+                        ImageSource="ms-appx:///Assets/background.png"
+                                Opacity="0.6"
+             Stretch="Fill"/>
+                </Grid.Resources>
 
 
 
-                <Button x:ConnectionId='30' Style="{StaticResource ScenarioButton}" Tag="At the Bakery. (bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0"                     >
+                <Button x:ConnectionId='30' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Bakery. (bakery) You are a french girl in a bakery" Grid.Row="0" Grid.Column="0"                     >
+                   
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/bakery.png" Height="100" Width="100"/>
                         <TextBlock Text="At the Bakery" Foreground="White" FontSize="20"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='31' Style="{StaticResource ScenarioButton}" Tag="Ordering at a Restaurant. (restaurant) You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1"                     >
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <Button x:ConnectionId='31' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Ordering at a Restaurant. (restaurant) You are a a waiter at a restaurant" Grid.Row="0" Grid.Column="1"                     >
+                    
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                         <Image Source="/images/restaurant.png" Height="100" Width="100"/>
                         <TextBlock Text="Ordering at a Restaurant" Foreground="White" FontSize="20"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='32' Style="{StaticResource ScenarioButton}" Tag="Checking in to a Hotel. (hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2"                     >
+                <Button x:ConnectionId='32' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Checking in to a Hotel. (hotel) You are a receptionist at the front desk of a hotel" Grid.Row="0" Grid.Column="2"                     >
+                    
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/hotel.png" Height="100" Width="100"/>
                         <TextBlock Text="Checking in to a Hotel" Foreground="White" FontSize="20"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='33' Style="{StaticResource ScenarioButton}" Tag="At the Grocery Store. (grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0"                     >
+                <Button x:ConnectionId='33' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Grocery Store. (grocery) You are an employee at the grocery store asking if theres anything you can help with" Grid.Row="1" Grid.Column="0"                     >
+                    
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/grocery.png" Height="100" Width="100"/>
                         <TextBlock Text="At the Grocery Store" Foreground="White" FontSize="20"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='34' Style="{StaticResource ScenarioButton}" Tag="At the Airport. (airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1"                     >
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <Image Source="/images/airport.png" Height="100" Width="100"/>
-                        <TextBlock Text="At the Airport" Foreground="White" FontSize="20"/>
-                    </StackPanel>
+                <Button x:ConnectionId='34' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Airport. (airport) You are a french guy at the airport" Grid.Row="1" Grid.Column="1"                     >
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <Image Source="/images/airport.png" Height="100" Width="100"/>
+                            <TextBlock Text="At the Airport" Foreground="White" FontSize="20"/>
+                        </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='35' Style="{StaticResource ScenarioButton}" Tag="Asking for Directions. (directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2"                     >
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <Image Source="/images/directions.png" Height="100" Width="100"/>
-                        <TextBlock Text="Asking for Directions" Foreground="White" FontSize="20"/>
-                    </StackPanel>
+
+                <Button x:ConnectionId='35' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Asking for Directions. (directions) You are a local helping with directions. You should ask if theres any monuents in paris they want to see and then say how to get there" Grid.Row="1" Grid.Column="2"                     >
+                    
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <Image Source="/images/directions.png" Height="100" Width="100"/>
+                            <TextBlock Text="Asking for Directions" Foreground="White" FontSize="20"/>
+                        </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='36' Style="{StaticResource ScenarioButton}" Tag="Seeing a Doctor. (doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0"                     >
+
+                <Button x:ConnectionId='36' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="Seeing a Doctor. (doctor) You are a french doctor, seeing what is wrong with the user and asking about how they feel" Grid.Row="2" Grid.Column="0"                     >
+                    
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/doctor.png" Height="100" Width="100"/>
                         <TextBlock Text="Seeing a Doctor" Foreground="White" FontSize="20"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='37' Style="{StaticResource ScenarioButton}" Tag="At the Park. (park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1"                     >
+                <Button x:ConnectionId='37' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At the Park. (park) You are a french girl hanging out with the user at the park, have a lively chat about anything really, bring up a light conversation starter" Grid.Row="2" Grid.Column="1"                     >
+                    
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/park.png" Height="100" Width="100"/>
                         <TextBlock Text="At the Park" Foreground="White" FontSize="20"/>
                     </StackPanel>
                 </Button>
 
-                <Button x:ConnectionId='38' Style="{StaticResource ScenarioButton}" Tag="At a University. (university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2"                     >
+                <Button x:ConnectionId='38' Style="{StaticResource ScenarioButton}" Background="{StaticResource ScenarioBackgroundBrush}" Tag="At a University. (university) You are a maths professor at a university" Grid.Row="2" Grid.Column="2"                     >
+                    
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                         <Image Source="/images/university.png" Height="100" Width="100"/>
                         <TextBlock Text="At a University" Foreground="White" FontSize="20"/>
@@ -167,8 +185,8 @@
                     <RowDefinition Height=".5*"/>
                     <RowDefinition Height="3*"/>
                 </Grid.RowDefinitions>
-                <TextBlock x:ConnectionId='17' x:Name="WelcomeText" Text="Welcome Back!" Grid.Row="0" HorizontalAlignment="Center" FontSize="32" VerticalAlignment="Center" FontFamily="Segoe UI Variable"/>
-                <TextBlock x:ConnectionId='18' x:Name="YouStudiedForText" Text="You have studied for 3 minutes today. Keep it up!" Grid.Row="1" HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Margin="10" FontFamily="Segoe UI Variable"/>
+                <TextBlock x:ConnectionId='17' x:Name="WelcomeText" Text="Welcome Back!" Grid.Row="0" HorizontalAlignment="Center" FontSize="32" VerticalAlignment="Center" FontFamily="Segoe UI Variable" FontWeight="Bold"/>
+                <TextBlock x:ConnectionId='18' x:Name="YouStudiedForText" Text="You have studied for 3 minutes today. Keep it up!" Grid.Row="1" HorizontalAlignment="Center" FontSize="24" VerticalAlignment="Center" Margin="10" FontFamily="Segoe UI Variable" FontWeight="SemiBold"/>
                 <Grid Grid.Row="2" Margin="0,0,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -176,30 +194,51 @@
                         <ColumnDefinition Width="*"/>
 
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" BorderThickness="1" Background="#303030" Padding="20" CornerRadius="8" Margin="20" MinWidth="200" MaxWidth="230"  MaxHeight="150">
+
+                    <StackPanel Grid.Column="0" BorderThickness="0"  BorderBrush="#343434" Padding="20" CornerRadius="8" Margin="20" MinWidth="210" MaxWidth="230" MaxHeight="150">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="/images/background.jpg" Opacity=".6" Stretch="Fill"/>
+
+                        </StackPanel.Background>
                         <TextBlock Text="Scenarios: Messages Sent" FontSize="16" FontFamily="Segoe UI Variable"/>
-                        <TextBlock x:ConnectionId='28' x:Name="TotalMessagesSentText" Text="500" FontSize="40" FontFamily="Segoe UI Variable"/>
-                        <TextBlock x:ConnectionId='29' x:Name="MessagesSentTodayText" Text="20 Today" FontSize="16" FontFamily="Segoe UI Variable"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="1" BorderThickness="1" Background="#303030" Padding="20" CornerRadius="8" Margin="20" MinWidth="200" MaxWidth="230" MaxHeight="150">
+                            <TextBlock x:ConnectionId='28' x:Name="TotalMessagesSentText" Text="500" FontSize="40" FontFamily="Segoe UI Variable"/>
+                            <TextBlock x:ConnectionId='29' x:Name="MessagesSentTodayText" Text="20 Today" FontSize="16" FontFamily="Segoe UI Variable"/>
+                        </StackPanel>
+
+                    
+                        
+                        <StackPanel Grid.Column="1" BorderThickness="0"  BorderBrush="#343434" Padding="20" CornerRadius="8" Margin="20" MinWidth="210" MaxWidth="230" MaxHeight="150">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="/images/background.jpg" Opacity=".6" Stretch="Fill"/>
+
+                        </StackPanel.Background>
                         <TextBlock Text="Today's Tip" FontSize="16" FontFamily="Segoe UI Variable"/>
-                        <TextBlock x:ConnectionId='26' x:Name="TodaysTipText" Text="Use etre for past tense" FontSize="23" TextWrapping="Wrap" FontFamily="Segoe UI Variable"/>
-                        <TextBlock x:ConnectionId='27' x:Name="TodaysDateText" Text="7/23/25" FontSize="16" FontFamily="Segoe UI Variable"/>
-                    </StackPanel>
-                    <StackPanel Grid.Column="2" BorderThickness="1" Background="#303030" Padding="20" CornerRadius="8" Margin="20" MinWidth="200" MaxWidth="230" MaxHeight="150" >
+                            <TextBlock x:ConnectionId='26' x:Name="TodaysTipText" Text="Use etre for past tense" FontSize="20" TextWrapping="Wrap" FontFamily="Segoe UI Variable"/>
+                            <TextBlock x:ConnectionId='27' x:Name="TodaysDateText" Text="7/23/25" FontSize="16" FontFamily="Segoe UI Variable"/>
+                        </StackPanel>
+                    <StackPanel Grid.Column="2" BorderThickness="0"  BorderBrush="#343434" Padding="20" CornerRadius="8" Margin="20" MinWidth="210" MaxWidth="230" MaxHeight="150">
+                        <StackPanel.Background>
+                            <ImageBrush ImageSource="/images/background.jpg" Opacity=".6" Stretch="Fill"/>
+
+                        </StackPanel.Background>
                         <TextBlock Text="Total Time Spent Learning" FontSize="16" FontFamily="Segoe UI Variable"/>
                         <TextBlock x:ConnectionId='24' x:Name="TotalTimeSpentText" Text="2:20" FontSize="40" FontFamily="Segoe UI Variable"/>
                         <TextBlock x:ConnectionId='25' x:Name="TodaysTimeSpentText" Text="00:20 Today" FontSize="16" FontFamily="Segoe UI Variable"/>
                     </StackPanel>
                 </Grid>
-                <TextBlock Text="Jump back in" Grid.Row="4" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" Margin="25,0,0,0" FontFamily="Segoe UI Variable"/>
+                <TextBlock Text="Jump back in" Grid.Row="4" HorizontalAlignment="Left" FontSize="24" VerticalAlignment="Top" Margin="25,0,0,0" FontFamily="Segoe UI Variable" FontWeight="SemiBold"/>
                 <Grid Grid.Row="5" Margin="0,20,0,0" MaxWidth="600" HorizontalAlignment="Left">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Button x:ConnectionId='19' x:Name="MostRecentScenarioBlock" Style="{StaticResource Flashcard}" Margin="20,0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Stretch"  MinHeight="150" MaxHeight="200" Width="230"                     >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/images/background.png" Opacity=".7" Stretch="Fill"/>
+
+                        </Button.Background>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                          
                             <Image x:ConnectionId='22' x:Name="MostRecentScenarioImage" Source="/images/bakery.png" Height="50" Width="50" Margin="10"/>
                             <TextBlock x:ConnectionId='23' x:Name="MostRecentScenarioTitle" Text="At the Bakery" FontSize="20"/>
                             <TextBlock Text="Most Recent Scenario" FontSize="16" Foreground="#999999"/>
@@ -207,8 +246,12 @@
                         </StackPanel>
                     </Button>
                     <Button x:ConnectionId='20' x:Name="RecommendedFlashcardsBlock" Style="{StaticResource Flashcard}" Margin="20, 0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" MinHeight="150" MaxHeight="200" Width="230"                                  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="/images/background.png" Opacity=".7" Stretch="Fill"/>
+
+                        </Button.Background>
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="/images/bakery.png" Height="50" Width="50" Margin="10"/>
+                            <Image Source="/images/flashcards.png" Height="50" Width="50" Margin="10"/>
                             <TextBlock x:ConnectionId='21' x:Name="RecommendedFlashcardsText" Text="Flashcard Pack" FontSize="20"/>
                             <TextBlock Text="Recommended Flashcards" FontSize="16" Foreground="#999999"/>
 
@@ -230,7 +273,7 @@
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock x:ConnectionId='15' x:Name="FlashcardPackTitleText" Text="flashy (12/45)" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Margin="10" FontFamily="Segoe UI Variable"/>
+                    <TextBlock x:ConnectionId='15' x:Name="FlashcardPackTitleText" Text="flashy (12/45)" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Margin="10" FontFamily="Segoe UI Variable" FontWeight="SemiBold"/>
                     <DropDownButton Style="{StaticResource MinorButton}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxHeight="64" MaxWidth="64" CornerRadius="0">
                         <Image Source="/images/menu.png" Height="30" Width="30"/>
                         <DropDownButton.Flyout>
@@ -275,7 +318,7 @@
                     <RowDefinition Height="7*"/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0" BorderThickness="0,0,0,2" BorderBrush="#181818" Padding="20">
-                    <TextBlock Text="Mistakes Overview" FontSize="20" VerticalAlignment="Center" FontFamily="Segoe UI Variable"/>
+                    <TextBlock Text="Mistakes Overview" FontSize="20" VerticalAlignment="Center" FontFamily="Segoe UI Variable" FontWeight="SemiBold"/>
                 </Border>
                 <ScrollViewer Grid.Row="1">
                     <RichTextBlock x:ConnectionId='9' x:Name="MistakesText" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" MaxWidth="700" TextWrapping="Wrap" FontFamily="Segoe UI Variable">

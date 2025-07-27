@@ -46,6 +46,7 @@ namespace LanguageAppWinUI
 
 
 
+
         UserStats stats;
         private DispatcherTimer _timeLoggerTimer;
 

@@ -64,6 +64,8 @@
   <ItemGroup>
     <None Remove="images\airport.png" />
     <None Remove="images\back.png" />
+    <None Remove="images\background.jpg" />
+    <None Remove="images\background.png" />
     <None Remove="images\bakery.png" />
     <None Remove="images\book-open.png" />
     <None Remove="images\book-open.svg" />
@@ -96,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="images\chevronleft.png">
@@ -199,6 +207,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="Assets\background.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Update="Assets\flashcards.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -209,6 +220,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="Assets\tips.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\videos\LoadingVideo.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

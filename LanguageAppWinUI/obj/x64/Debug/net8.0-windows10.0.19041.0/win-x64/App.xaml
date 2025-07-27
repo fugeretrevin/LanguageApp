@@ -12,6 +12,10 @@
                 
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
+            <ImageBrush x:Key="ScenarioBackgroundBrush"
+                ImageSource="ms-appx:///images/background.png"
+                Opacity="0.6"
+                Stretch="Fill"/>
             <Style x:Key="ScenarioButton" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}" >
                 <Setter Property="HorizontalAlignment" Value="Stretch"/>
                 <Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -19,6 +23,9 @@
                 <Setter Property="Padding" Value="10"/>
                 <Setter Property="FontFamily" Value="Segoe UI Variable"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Background" Value="{StaticResource ScenarioBackgroundBrush}"/>
+
+                <Setter Property="BorderBrush" Value="#0c2d48"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -86,7 +93,81 @@
                     </Setter.Value>
                 </Setter>
             </Style>
-           
+            <Style x:Key="TypicalButton" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}" >
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="VerticalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="15"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="FontFamily" Value="Segoe UI Variable"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid" RenderTransformOrigin="0.5,0.5">
+                                <Grid.RenderTransform>
+                                    <ScaleTransform x:Name="scaleTransform" ScaleX="1" ScaleY="1" />
+                                </Grid.RenderTransform>
+
+                                <!-- Background -->
+                                <Border x:Name="ButtonBorder"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="8"
+                Padding="{TemplateBinding Padding}">
+                                    <!-- 🧠 This supports any layout: text, image, StackPanel, etc -->
+                                    <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                </Border>
+
+                                <!-- Hover, Pressed Visual States -->
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" >
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         To="1" Duration="0:0:0.2" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         To="1" Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </VisualState>
+
+                                        <VisualState x:Name="PointerOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         To="1.1" Duration="0:0:0.2" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         To="1.1" Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </VisualState>
+
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         To="0.95" Duration="0:0:0.03" />
+                                                <DoubleAnimation Storyboard.TargetName="scaleTransform"
+                                         Storyboard.TargetProperty="ScaleY"
+                                         To="0.95" Duration="0:0:0.03" />
+                                            </Storyboard>
+                                        </VisualState>
+
+
+                                        <VisualState x:Name="Disabled"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style x:Key="SidebarButton" TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
                 <Setter Property="Foreground" Value="White"/>
                 <Setter Property="FontSize" Value="14"/>

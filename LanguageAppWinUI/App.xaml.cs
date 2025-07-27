@@ -35,6 +35,8 @@ namespace LanguageAppWinUI
         public App()
         {
             InitializeComponent();
+            Microsoft.UI.Composition.SystemBackdrops.MicaController micaController = new();
+
         }
 
         /// <summary>

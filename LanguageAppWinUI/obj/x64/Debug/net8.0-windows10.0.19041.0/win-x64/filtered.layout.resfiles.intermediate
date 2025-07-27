@@ -1,3 +1,4 @@
+Assets\background.png
 Assets\flashcards.json
 Assets\LockScreenLogo.scale-200.png
 Assets\logo.png
@@ -13,10 +14,12 @@ Assets\StoreLogo.scale-150.png
 Assets\StoreLogo.scale-200.png
 Assets\StoreLogo.scale-400.png
 Assets\tips.json
-Assets\videos\loading.mp4
+Assets\videos\LoadingVideo.mp4
 Assets\Wide310x150Logo.scale-200.png
 images\airport.png
 images\back.png
+images\background.jpg
+images\background.png
 images\bakery.png
 images\book-open.png
 images\ChatPicture.png

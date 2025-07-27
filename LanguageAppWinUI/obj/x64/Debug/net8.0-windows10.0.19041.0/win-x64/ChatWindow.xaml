@@ -6,12 +6,12 @@
     xmlns:local="using:LanguageAppWinUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Background="#202020">
 
 
 
 
-    <Grid>
+    <Grid Background="#202020">
 
                 <MediaPlayerElement x:ConnectionId='2' x:Name="LoadingVideo"
             AutoPlay="False"
@@ -21,21 +21,21 @@
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Stretch="UniformToFill"
-                    Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3"/>
+                    Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3" Source="ms-appx:///Assets/videos/LoadingVideo.mp4"/>
 
-                <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Grid x:ConnectionId='3' Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="MainChatContent">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal" BorderThickness="0,0,0,4" BorderBrush="#191919">
-                <Button x:ConnectionId='11' Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100"                IsTabStop="False">
+                <Button x:ConnectionId='12' Style="{StaticResource MinorButton}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" MaxHeight="85" MaxWidth="100"                IsTabStop="False">
                             <Image Source="/images/back.png" Height="25" Width="25"/>
                         </Button>
-                        <TextBlock x:ConnectionId='12' x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
+                        <TextBlock x:ConnectionId='13' x:Name="ScenarioTitleText" Text="A la Restaurant" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" FontFamily="Segoe UI Variable"/>
                     </StackPanel>
-                    <Grid x:ConnectionId='3' x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10" Grid.Row="1">
+                    <Grid x:ConnectionId='4' x:Name="MainContent" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="10" Grid.Row="1">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*" />
                             <RowDefinition Height="*" />
@@ -46,18 +46,18 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <ScrollViewer x:ConnectionId='4' x:Name="ChatScrollViewer"  Background="#FF29292B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1" CornerRadius="16">
-                        <StackPanel x:ConnectionId='10' x:Name="ChatStackPanel" Orientation="Vertical" Margin="10"/>
+                        <ScrollViewer x:ConnectionId='5' x:Name="ChatScrollViewer"  Background="#FF29292B" Margin="10" Padding="10" BorderBrush="#FF2B2B2B" Grid.Row="0" Grid.Column="1" CornerRadius="16">
+                        <StackPanel x:ConnectionId='11' x:Name="ChatStackPanel" Orientation="Vertical" Margin="10"/>
                     <!-- Chat messages will be added here dynamically -->
 
 
                         </ScrollViewer>
 
-                <StackPanel x:ConnectionId='5' x:Name="AnimatedContainer" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
+                <StackPanel x:ConnectionId='6' x:Name="AnimatedContainer" Grid.Column="2" Grid.Row="0" Orientation="Vertical">
                     <StackPanel.RenderTransform>
-                        <TranslateTransform x:ConnectionId='8' x:Name="SlideTransform"/>
+                        <TranslateTransform x:ConnectionId='9' x:Name="SlideTransform"/>
                     </StackPanel.RenderTransform>
-                    <RichEditBox x:ConnectionId='9' Name="CorrectedUserDisplay" Margin="10,10,10,0" Padding="10" Foreground="White" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" FontSize="18"/>
+                    <RichEditBox x:ConnectionId='10' Name="CorrectedUserDisplay" Margin="10,10,10,0" Padding="10" Foreground="White" FontFamily="Segoe UI Variable" Height ="200" MaxHeight="150" VerticalAlignment="Top" Background="#222222" BorderThickness="1" BorderBrush="#212121" IsReadOnly="True" IsTabStop="False" IsHitTestVisible="False" FontSize="18"/>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/images/edit-2.png" MaxWidth="16" MaxHeight="16" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0"/>
 
@@ -68,7 +68,7 @@
                 </StackPanel>
 
 
-                <RichEditBox x:ConnectionId='6' Name="InputBox"
+                <RichEditBox x:ConnectionId='7' Name="InputBox"
                 Background="Transparent"
                 Foreground="White"
                 PlaceholderText="Type in here"
@@ -81,8 +81,9 @@
                 Grid.Column="1" 
                 Padding="4" 
                 Margin="10"
-                FontFamily="Segoe UI Variable"/>
-                        <Image x:ConnectionId='7' x:Name="scenarioImage" MinWidth="150" MinHeight="150"  MaxWidth="200" MaxHeight="200" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+                FontFamily="Segoe UI Variable"
+                IsSpellCheckEnabled="False"/>
+                        <Image x:ConnectionId='8' x:Name="scenarioImage" MinWidth="150" MinHeight="150"  MaxWidth="200" MaxHeight="200" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
 
                     </Grid>
                 </Grid>
